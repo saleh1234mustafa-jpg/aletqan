@@ -10,6 +10,8 @@
 <meta name="description" content="مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت في المملكة العربية السعودية.">
 <meta name="keywords" content="مكتب الإتقان, تعقيب, خدمات إلكترونية, خدمات شركات, خدمات أفراد, تجديد إقامة, نقل خدمات, تغيير مهنة, خدمات السعودية">
 
+<meta name="theme-color" content="#075b43">
+
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
@@ -17,17 +19,18 @@
 :root{
   --green:#075b43;
   --green2:#0b8a62;
-  --green3:#16a978;
-  --dark:#06251d;
+  --green3:#18b47e;
+  --dark:#03251b;
   --gold:#c9a24a;
-  --gold2:#e1c477;
+  --gold2:#ead28e;
   --cream:#fbfaf5;
   --bg:#f4f8f6;
-  --white:#ffffff;
-  --text:#15251f;
-  --muted:#66756f;
+  --white:#fff;
+  --text:#14251f;
+  --muted:#687971;
   --border:#dfe9e4;
-  --shadow:0 20px 60px rgba(5,53,39,.10);
+  --shadow:0 22px 65px rgba(4,55,40,.11);
+  --radius:24px;
 }
 
 *{
@@ -52,21 +55,32 @@ a{
   color:inherit;
 }
 
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
 .container{
-  width:92%;
-  max-width:1200px;
+  width:min(92%,1240px);
   margin:auto;
 }
+
 
 /* ================= HEADER ================= */
 
 header{
   position:sticky;
   top:0;
-  z-index:9999;
-  background:rgba(255,255,255,.94);
+  z-index:1000;
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(223,233,228,.8);
+  border-bottom:1px solid rgba(223,233,228,.85);
 }
 
 .nav{
@@ -74,54 +88,53 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:25px;
+  gap:20px;
 }
 
 .logo{
   display:flex;
   align-items:center;
   gap:12px;
-  color:var(--green);
 }
 
 .logo-mark{
-  width:48px;
-  height:48px;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-size:22px;
+  width:50px;
+  height:50px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-size:23px;
   font-weight:900;
   background:linear-gradient(135deg,var(--green),var(--green3));
-  box-shadow:0 8px 25px rgba(11,138,98,.22);
+  box-shadow:0 10px 28px rgba(11,138,98,.23);
 }
 
 .logo-text{
-  font-size:21px;
+  font-size:20px;
   font-weight:900;
-  line-height:1.2;
+  color:var(--green);
+  line-height:1.15;
 }
 
 .logo-text small{
   display:block;
+  color:#7b8a84;
   font-size:9px;
-  color:#788780;
   font-weight:600;
-  margin-top:4px;
+  margin-top:5px;
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:25px;
+  gap:24px;
 }
 
 .nav-links a{
   font-size:13px;
-  font-weight:700;
-  color:#40514a;
+  font-weight:800;
+  color:#42544d;
   transition:.25s;
 }
 
@@ -129,41 +142,65 @@ header{
   color:var(--green2);
 }
 
-.nav-whatsapp{
-  background:var(--green2)!important;
+.nav-cta{
+  background:linear-gradient(135deg,var(--green2),var(--green));
   color:#fff!important;
-  padding:11px 18px;
+  padding:10px 17px;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(11,138,98,.18);
+  box-shadow:0 9px 22px rgba(11,138,98,.18);
 }
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:#eef6f2;
+  color:var(--green);
+  width:44px;
+  height:44px;
+  border-radius:13px;
+  font-size:22px;
+}
+
 
 /* ================= HERO ================= */
 
 .hero{
   position:relative;
   overflow:hidden;
-  padding:90px 0 85px;
+  padding:84px 0 90px;
   background:
-  radial-gradient(circle at 85% 15%,rgba(201,162,74,.18),transparent 20%),
-  radial-gradient(circle at 15% 85%,rgba(22,169,120,.13),transparent 25%),
-  linear-gradient(135deg,#ffffff,#edf7f2);
+  radial-gradient(circle at 87% 12%,rgba(201,162,74,.19),transparent 22%),
+  radial-gradient(circle at 12% 82%,rgba(24,180,126,.13),transparent 28%),
+  linear-gradient(135deg,#fff,#edf7f2);
+}
+
+.hero:before,
+.hero:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(7,91,67,.08);
+  border-radius:50%;
 }
 
 .hero:before{
-  content:"";
-  position:absolute;
-  width:420px;
-  height:420px;
-  border:70px solid rgba(11,138,98,.035);
-  border-radius:50%;
-  left:-180px;
-  bottom:-220px;
+  width:480px;
+  height:480px;
+  left:-250px;
+  bottom:-290px;
+}
+
+.hero:after{
+  width:300px;
+  height:300px;
+  right:-170px;
+  top:-180px;
 }
 
 .hero-grid{
   position:relative;
+  z-index:2;
   display:grid;
-  grid-template-columns:1.05fr .95fr;
+  grid-template-columns:1.08fr .92fr;
   gap:65px;
   align-items:center;
 }
@@ -171,217 +208,263 @@ header{
 .badge{
   display:inline-flex;
   align-items:center;
-  gap:8px;
+  gap:9px;
   padding:7px 15px;
-  border-radius:40px;
-  background:#e2f4eb;
+  border-radius:50px;
+  background:#e5f5ed;
   color:var(--green);
+  border:1px solid #cfe9dc;
   font-size:12px;
-  font-weight:800;
-  border:1px solid #cce8da;
+  font-weight:900;
 }
 
-.badge:before{
-  content:"";
+.badge i{
   width:8px;
   height:8px;
-  border-radius:50%;
   background:var(--gold);
+  border-radius:50%;
+  display:block;
 }
 
 .hero h1{
-  font-size:52px;
-  line-height:1.35;
-  margin:22px 0 18px;
+  font-size:clamp(38px,5vw,62px);
+  line-height:1.25;
   font-weight:900;
-  letter-spacing:-1px;
+  letter-spacing:-1.5px;
+  margin:20px 0 18px;
 }
 
 .hero h1 span{
-  background:linear-gradient(90deg,var(--green2),var(--green));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+  color:var(--green2);
 }
 
-.hero-description{
+.hero-desc{
+  max-width:680px;
   color:var(--muted);
-  font-size:17px;
-  max-width:650px;
+  font-size:16px;
 }
 
-.buttons{
+.hero-actions{
   display:flex;
   flex-wrap:wrap;
-  gap:13px;
-  margin-top:30px;
+  gap:12px;
+  margin-top:28px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  padding:14px 23px;
-  border-radius:13px;
-  font-weight:800;
+  gap:9px;
+  border:0;
+  border-radius:14px;
+  padding:14px 22px;
   font-size:14px;
-  transition:.3s;
+  font-weight:900;
+  transition:.28s;
 }
 
 .btn:hover{
   transform:translateY(-3px);
 }
 
-.btn-primary{
+.primary{
   background:linear-gradient(135deg,var(--green2),var(--green));
-  color:white;
-  box-shadow:0 12px 28px rgba(11,138,98,.22);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(11,138,98,.22);
 }
 
-.btn-secondary{
+.secondary{
   background:#fff;
   color:var(--green);
   border:1px solid var(--border);
 }
 
-/* HERO VISUAL */
-
-.hero-visual{
-  position:relative;
+.hero-note{
+  margin-top:17px;
+  color:#71817a;
+  font-size:11px;
 }
 
-.hero-card{
+
+/* ================= HERO PANEL ================= */
+
+.hero-panel{
+  min-height:450px;
+  border-radius:34px;
+  padding:25px;
   position:relative;
   overflow:hidden;
-  min-height:410px;
-  border-radius:32px;
-  padding:25px;
-  background:linear-gradient(145deg,#0a5d45,#063426);
-  box-shadow:0 30px 70px rgba(5,53,39,.20);
-  border:5px solid rgba(255,255,255,.8);
+  color:#fff;
+  background:
+  radial-gradient(circle at 15% 10%,rgba(201,162,74,.2),transparent 25%),
+  linear-gradient(145deg,#0a6148,#03271c);
+  box-shadow:0 30px 80px rgba(3,39,28,.22);
+  border:5px solid rgba(255,255,255,.78);
 }
 
-.hero-card:before{
+.hero-panel:before{
   content:"";
   position:absolute;
-  width:260px;
-  height:260px;
+  width:280px;
+  height:280px;
+  border:45px solid rgba(255,255,255,.035);
   border-radius:50%;
-  background:rgba(201,162,74,.12);
-  top:-100px;
-  left:-80px;
+  right:-110px;
+  bottom:-120px;
 }
 
-.hero-card:after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  border:35px solid rgba(255,255,255,.035);
-  right:-80px;
-  bottom:-80px;
-}
-
-.hero-inner{
+.panel-inner{
+  height:100%;
+  min-height:390px;
   position:relative;
   z-index:2;
-  height:100%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
   text-align:center;
 }
 
-.hero-emblem{
+.emblem{
   width:105px;
   height:105px;
   border-radius:32px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:46px;
-  font-weight:900;
-  border:2px solid rgba(225,196,119,.65);
+  display:grid;
+  place-items:center;
+  border:2px solid rgba(234,210,142,.7);
   background:rgba(255,255,255,.07);
-  box-shadow:0 15px 40px rgba(0,0,0,.15);
-}
-
-.hero-inner h2{
-  color:white;
-  font-size:30px;
-  margin:20px 0 5px;
+  font-size:45px;
   font-weight:900;
 }
 
-.hero-inner p{
-  color:#c5d8d0;
-  font-size:13px;
+.panel-inner h2{
+  font-size:30px;
+  margin:18px 0 3px;
 }
 
 .gold-line{
-  width:70px;
+  width:72px;
   height:3px;
+  border-radius:4px;
   background:linear-gradient(90deg,var(--gold),var(--gold2));
-  border-radius:5px;
-  margin:16px auto;
+  margin:14px auto;
 }
 
-.hero-pills{
+.panel-inner p{
+  color:#c7d9d2;
+  font-size:13px;
+}
+
+.pills{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:8px;
-  margin-top:15px;
+  margin-top:17px;
 }
 
-.hero-pill{
+.pill{
   padding:6px 11px;
-  border-radius:20px;
+  border-radius:30px;
   background:rgba(255,255,255,.08);
-  color:#e1ebe7;
+  color:#e2ebe7;
   font-size:11px;
+  border:1px solid rgba(255,255,255,.06);
 }
 
-/* ================= SECTION ================= */
+
+/* ================= SECTIONS ================= */
 
 section{
-  padding:80px 0;
+  padding:82px 0;
 }
 
-.section-title{
+.section-head{
   text-align:center;
-  margin-bottom:45px;
+  margin-bottom:43px;
 }
 
-.section-title .mini{
+.kicker{
   color:var(--gold);
   font-size:11px;
   font-weight:900;
   letter-spacing:1px;
 }
 
-.section-title h2{
-  font-size:35px;
-  line-height:1.4;
+.section-head h2{
+  font-size:clamp(28px,3vw,38px);
+  line-height:1.35;
   margin:5px 0;
   font-weight:900;
 }
 
-.section-title p{
-  color:var(--muted);
+.section-head p{
   font-size:14px;
+  color:var(--muted);
 }
+
+
+/* ================= SERVICE SEARCH ================= */
+
+.service-toolbar{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.search{
+  flex:1;
+  max-width:430px;
+}
+
+.search input{
+  width:100%;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:14px;
+  padding:12px 15px;
+  outline:none;
+  color:var(--text);
+}
+
+.search input:focus{
+  border-color:#9fcdb9;
+  box-shadow:0 0 0 4px rgba(11,138,98,.07);
+}
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.filter{
+  border:1px solid var(--border);
+  background:#fff;
+  color:#50625b;
+  padding:9px 13px;
+  border-radius:12px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.filter.active,
+.filter:hover{
+  background:#e8f6ef;
+  color:var(--green);
+  border-color:#c5e2d3;
+}
+
 
 /* ================= SERVICES ================= */
 
 .services{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:22px;
+  gap:19px;
 }
 
 .service{
@@ -389,8 +472,8 @@ section{
   overflow:hidden;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:22px;
-  padding:28px;
+  border-radius:var(--radius);
+  padding:25px;
   transition:.3s;
 }
 
@@ -416,125 +499,196 @@ section{
   transform:scaleX(1);
 }
 
-.service-icon{
-  width:62px;
-  height:62px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:18px;
-  background:linear-gradient(135deg,#e3f5eb,#f4fbf7);
-  border:1px solid #d5ebdf;
-  font-size:29px;
-  margin-bottom:17px;
+.icon{
+  width:59px;
+  height:59px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#e3f5eb,#f5fbf8);
+  border:1px solid #d4ebdf;
+  font-size:27px;
+  margin-bottom:15px;
 }
 
 .service h3{
-  font-size:19px;
-  margin-bottom:8px;
+  font-size:18px;
   font-weight:900;
+  margin-bottom:7px;
 }
 
 .service p{
+  font-size:12px;
   color:var(--muted);
-  font-size:13px;
 }
 
-.service-list{
-  margin-top:14px;
+.service ul{
+  margin:13px 0 0;
   padding-right:18px;
-  color:#53645d;
+  color:#566861;
   font-size:12px;
 }
 
-.service-list li{
-  margin:5px 0;
+.service li{
+  margin:4px 0;
 }
 
-.service-link{
+.service-action{
   display:inline-flex;
-  margin-top:17px;
+  margin-top:15px;
   color:var(--green2);
-  font-size:13px;
+  font-size:12px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+
+/* ================= FEATURED ================= */
+
+.featured{
+  background:#fff;
+}
+
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature{
+  position:relative;
+  padding:27px;
+  border-radius:22px;
+  color:#fff;
+  overflow:hidden;
+  background:linear-gradient(145deg,#0a5d45,#04291f);
+  box-shadow:0 18px 45px rgba(4,45,33,.13);
+}
+
+.feature.gold{
+  background:linear-gradient(145deg,#8a6a25,#4d3810);
+}
+
+.feature.warn{
+  background:linear-gradient(145deg,#8a432b,#4c2015);
+}
+
+.feature .tag{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  background:rgba(255,255,255,.12);
+  font-size:10px;
   font-weight:900;
 }
+
+.feature h3{
+  font-size:20px;
+  margin:13px 0 6px;
+}
+
+.feature p{
+  color:#d1dfda;
+  font-size:12px;
+}
+
+.feature strong{
+  display:block;
+  font-size:13px;
+  margin-top:13px;
+  color:#fff;
+}
+
+.feature .go{
+  display:inline-block;
+  margin-top:16px;
+  padding:9px 13px;
+  border-radius:10px;
+  background:#fff;
+  color:var(--green);
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+
 
 /* ================= POPULAR ================= */
 
 .popular{
-  background:#fff;
+  background:linear-gradient(180deg,#fff,#f8fbf9);
 }
 
 .popular-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  gap:14px;
 }
 
 .popular-item{
-  background:linear-gradient(145deg,#f8fbf9,#eef7f2);
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:17px;
-  padding:21px 14px;
+  border-radius:18px;
+  padding:19px 12px;
   text-align:center;
-  font-size:13px;
-  font-weight:700;
+  font-size:12px;
+  font-weight:800;
   transition:.25s;
+  cursor:pointer;
 }
 
 .popular-item:hover{
   transform:translateY(-4px);
-  border-color:#b9daca;
+  box-shadow:var(--shadow);
 }
 
 .popular-item span{
   display:block;
-  font-size:28px;
+  font-size:27px;
   margin-bottom:5px;
 }
+
 
 /* ================= TRUST ================= */
 
 .trust{
-  background:
-  radial-gradient(circle at 90% 10%,rgba(201,162,74,.1),transparent 25%),
-  linear-gradient(135deg,#082e23,#041c15);
+  background:linear-gradient(135deg,#082e23,#041b14);
   color:#fff;
 }
 
-.trust .section-title p{
-  color:#aec3ba;
+.trust .section-head p{
+  color:#afc4bb;
 }
 
 .trust-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:16px;
 }
 
 .trust-box{
   text-align:center;
-  padding:27px 15px;
+  padding:25px 14px;
   border:1px solid rgba(255,255,255,.09);
-  border-radius:19px;
+  border-radius:20px;
   background:rgba(255,255,255,.035);
 }
 
 .trust-number{
   color:var(--gold2);
-  font-size:29px;
+  font-size:27px;
   font-weight:900;
 }
 
 .trust-box h3{
-  font-size:16px;
-  margin:5px 0;
+  font-size:15px;
+  margin:4px 0;
 }
 
 .trust-box p{
+  font-size:11px;
   color:#b7c9c2;
-  font-size:12px;
 }
+
 
 /* ================= ABOUT ================= */
 
@@ -545,66 +699,60 @@ section{
 .about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
+  gap:20px;
 }
 
 .about-box{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:22px;
-  padding:34px;
+  border-radius:24px;
+  padding:32px;
 }
 
 .about-box h2{
   font-size:28px;
-  margin-bottom:12px;
   font-weight:900;
+  margin-bottom:10px;
 }
 
 .about-box p{
   color:var(--muted);
-  font-size:14px;
-}
-
-.about-points{
-  margin-top:20px;
-}
-
-.about-points div{
-  padding:10px 0;
-  border-bottom:1px solid #edf1ef;
   font-size:13px;
-  font-weight:600;
 }
 
-.about-points div:last-child{
-  border-bottom:none;
+.points{
+  margin-top:18px;
+}
+
+.points div{
+  padding:9px 0;
+  border-bottom:1px solid #edf1ef;
+  font-size:12px;
+  font-weight:700;
 }
 
 .about-feature{
-  height:100%;
-  min-height:300px;
-  border-radius:22px;
-  background:
-  linear-gradient(145deg,rgba(7,91,67,.96),rgba(4,42,31,.98));
-  color:#fff;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+  border-radius:24px;
+  min-height:330px;
+  padding:34px;
+  display:grid;
+  place-items:center;
   text-align:center;
-  padding:35px;
+  color:#fff;
+  background:linear-gradient(145deg,#075b43,#03261c);
   position:relative;
   overflow:hidden;
 }
 
-.about-feature:before{
+.about-feature:after{
   content:"";
   position:absolute;
-  width:300px;
-  height:300px;
+  width:320px;
+  height:320px;
   border:45px solid rgba(255,255,255,.035);
   border-radius:50%;
+  left:-120px;
+  bottom:-170px;
 }
 
 .about-feature-content{
@@ -612,78 +760,59 @@ section{
   z-index:2;
 }
 
-.about-feature .big-icon{
+.about-feature .big{
   font-size:55px;
 }
 
 .about-feature h2{
-  font-size:27px;
-  margin:10px 0;
+  font-size:26px;
+  margin:8px 0;
 }
 
 .about-feature p{
-  color:#c4d6ce;
-  font-size:13px;
+  color:#c5d8d0;
+  font-size:12px;
+  max-width:480px;
 }
 
-/* ================= ADS ================= */
-
-.ads-section{
-  background:#f8faf9;
-}
-
-.ad-box{
-  min-height:150px;
-  border:2px dashed #c7d8d0;
-  border-radius:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#87968f;
-  background:#fff;
-}
 
 /* ================= STEPS ================= */
 
 .steps{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:18px;
 }
 
 .step{
-  position:relative;
   background:#fff;
   border:1px solid var(--border);
-  border-radius:20px;
-  padding:30px;
+  border-radius:21px;
+  padding:28px;
 }
 
 .step-number{
-  width:48px;
-  height:48px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:47px;
+  height:47px;
+  display:grid;
+  place-items:center;
   border-radius:50%;
   background:linear-gradient(135deg,var(--green2),var(--green));
   color:#fff;
   font-weight:900;
-  font-size:18px;
-  margin-bottom:15px;
   box-shadow:0 8px 20px rgba(11,138,98,.18);
 }
 
 .step h3{
-  margin-bottom:6px;
-  font-size:18px;
+  font-size:17px;
+  margin:12px 0 5px;
 }
 
 .step p{
+  font-size:12px;
   color:var(--muted);
-  font-size:13px;
 }
+
 
 /* ================= FAQ ================= */
 
@@ -696,27 +825,125 @@ details{
   background:#fff;
   border:1px solid var(--border);
   border-radius:15px;
-  margin-bottom:12px;
-  padding:17px 20px;
-  transition:.2s;
+  margin-bottom:11px;
+  padding:16px 19px;
 }
 
 details[open]{
-  border-color:#b8d8c9;
+  border-color:#b7d9c9;
   box-shadow:0 10px 25px rgba(5,53,39,.05);
 }
 
 summary{
   cursor:pointer;
-  font-weight:800;
-  font-size:14px;
+  font-size:13px;
+  font-weight:900;
 }
 
 details p{
   color:var(--muted);
-  font-size:13px;
-  margin-top:10px;
+  font-size:12px;
+  margin-top:9px;
 }
+
+
+/* ================= REQUEST ================= */
+
+.request{
+  background:#f7faf8;
+}
+
+.request-box{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:25px;
+  align-items:stretch;
+}
+
+.request-info{
+  border-radius:25px;
+  padding:34px;
+  color:#fff;
+  background:linear-gradient(145deg,#075b43,#03271d);
+}
+
+.request-info h2{
+  font-size:29px;
+  margin-bottom:9px;
+}
+
+.request-info p{
+  color:#c5d8d0;
+  font-size:12px;
+}
+
+.request-points{
+  margin-top:20px;
+}
+
+.request-points div{
+  margin:8px 0;
+  font-size:12px;
+}
+
+.form-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:30px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:11px;
+  font-weight:900;
+  color:#40524b;
+}
+
+.field input,
+.field select,
+.field textarea{
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:11px 12px;
+  outline:none;
+  background:#fbfdfc;
+  color:var(--text);
+}
+
+.field textarea{
+  min-height:115px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:#9bcab5;
+  box-shadow:0 0 0 4px rgba(11,138,98,.06);
+}
+
+.form-note{
+  font-size:10px;
+  color:#84928d;
+  margin-top:9px;
+}
+
 
 /* ================= CTA ================= */
 
@@ -727,40 +954,23 @@ details p{
 .cta-box{
   position:relative;
   overflow:hidden;
-  background:
-  radial-gradient(circle at 90% 10%,rgba(201,162,74,.16),transparent 25%),
-  linear-gradient(135deg,#0a5b43,#041f17);
+  border-radius:28px;
+  padding:48px;
   color:#fff;
-  border-radius:27px;
-  padding:55px;
+  background:
+  radial-gradient(circle at 90% 10%,rgba(201,162,74,.17),transparent 26%),
+  linear-gradient(135deg,#0a5b43,#041e16);
   box-shadow:0 25px 60px rgba(5,53,39,.16);
 }
 
-.cta-box:after{
-  content:"";
-  position:absolute;
-  width:250px;
-  height:250px;
-  border:40px solid rgba(255,255,255,.035);
-  border-radius:50%;
-  left:-80px;
-  bottom:-120px;
-}
-
-.cta-content{
-  position:relative;
-  z-index:2;
-}
-
 .cta-box h2{
-  font-size:32px;
-  margin-bottom:7px;
+  font-size:31px;
 }
 
 .cta-box p{
-  color:#c4d6ce;
-  margin-bottom:24px;
-  font-size:14px;
+  font-size:13px;
+  color:#c6d8d1;
+  margin:5px 0 20px;
 }
 
 .cta-box .btn{
@@ -768,72 +978,74 @@ details p{
   color:var(--green);
 }
 
+
 /* ================= CONTACT ================= */
 
 .contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:18px;
 }
 
 .contact-card{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:20px;
-  padding:28px;
+  border-radius:21px;
+  padding:27px;
 }
 
 .contact-card h3{
-  font-size:19px;
-  margin-bottom:7px;
+  font-size:18px;
 }
 
 .contact-card p{
+  font-size:12px;
   color:var(--muted);
-  font-size:13px;
+  margin:4px 0;
 }
 
-.contact-button{
+.contact-btn{
   display:inline-flex;
-  margin-top:18px;
+  margin-top:14px;
+  padding:11px 17px;
+  border-radius:11px;
   background:linear-gradient(135deg,var(--green2),var(--green));
   color:#fff;
-  padding:12px 20px;
-  border-radius:11px;
-  font-weight:800;
-  font-size:13px;
+  font-size:12px;
+  font-weight:900;
 }
+
 
 /* ================= FOOTER ================= */
 
 footer{
   background:#03150f;
   color:#cbd6d1;
-  padding:45px 0 25px;
-  font-size:12px;
+  padding:43px 0 23px;
+  font-size:11px;
 }
 
 .footer-grid{
   display:grid;
   grid-template-columns:1.5fr 1fr 1fr;
-  gap:35px;
+  gap:30px;
 }
 
 .footer-title{
+  font-size:17px;
   color:#fff;
-  font-size:18px;
   font-weight:900;
-  margin-bottom:9px;
+  margin-bottom:8px;
 }
 
 footer p{
-  color:#91a59c;
+  color:#8fa49a;
 }
 
 footer a{
   display:block;
   color:#aebfb7;
-  margin:7px 0;
+  margin:6px 0;
 }
 
 footer a:hover{
@@ -842,62 +1054,80 @@ footer a:hover{
 
 .copyright{
   border-top:1px solid rgba(255,255,255,.08);
-  margin-top:28px;
-  padding-top:20px;
-  color:#788d84;
+  margin-top:25px;
+  padding-top:18px;
+  color:#748a81;
   text-align:center;
 }
 
+
 /* ================= WHATSAPP ================= */
 
-.floating-whatsapp{
+.floating{
   position:fixed;
-  bottom:22px;
-  left:22px;
-  z-index:9998;
-  width:61px;
-  height:61px;
+  left:20px;
+  bottom:20px;
+  z-index:999;
+  width:60px;
+  height:60px;
   border-radius:50%;
+  display:grid;
+  place-items:center;
   background:#19a765;
   color:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:27px;
-  box-shadow:0 10px 30px rgba(0,0,0,.22);
+  font-size:26px;
+  box-shadow:0 12px 32px rgba(0,0,0,.22);
   transition:.25s;
 }
 
-.floating-whatsapp:hover{
+.floating:hover{
   transform:scale(1.08);
 }
 
-/* ================= MOBILE ================= */
 
-@media(max-width:950px){
+/* ================= TOAST ================= */
 
-  .nav{
-    min-height:70px;
-  }
+.toast{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:2000;
+  background:#062e22;
+  color:#fff;
+  padding:12px 17px;
+  border-radius:12px;
+  font-size:12px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:.3s;
+}
 
-  .nav-links a:not(.nav-whatsapp){
-    display:none;
-  }
+.toast.show{
+  opacity:1;
+  transform:none;
+}
 
-  .hero{
-    padding:60px 0;
-  }
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
 
   .hero-grid{
     grid-template-columns:1fr;
     gap:35px;
   }
 
-  .hero h1{
-    font-size:40px;
+  .services{
+    grid-template-columns:1fr 1fr;
   }
 
-  .services{
+  .featured-grid{
+    grid-template-columns:1fr;
+  }
+
+  .trust-grid{
     grid-template-columns:1fr 1fr;
   }
 
@@ -905,36 +1135,111 @@ footer a:hover{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .trust-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .about-grid{
+  .about-grid,
+  .request-box{
     grid-template-columns:1fr;
   }
 
-  .steps{
+  .service-toolbar{
+    align-items:stretch;
+    flex-direction:column;
+  }
+
+  .search{
+    max-width:none;
+  }
+}
+
+
+@media(max-width:720px){
+
+  .nav{
+    min-height:68px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:68px;
+    right:4%;
+    left:4%;
+    padding:13px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:17px;
+    box-shadow:var(--shadow);
+    flex-direction:column;
+    align-items:stretch;
+    gap:3px;
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:9px 10px;
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero h1{
+    font-size:37px;
+  }
+
+  .hero-panel{
+    min-height:370px;
+  }
+
+  .panel-inner{
+    min-height:320px;
+  }
+
+  .services{
     grid-template-columns:1fr;
   }
 
+  .steps,
   .contact-grid{
     grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  section{
+    padding:62px 0;
+  }
+
+  .cta-box{
+    padding:34px 24px;
+  }
+
+  .cta-box h2{
+    font-size:25px;
   }
 
   .footer-grid{
     grid-template-columns:1fr;
   }
-
 }
 
-@media(max-width:600px){
 
-  .container{
-    width:90%;
-  }
+@media(max-width:450px){
 
   .logo-text{
-    font-size:17px;
+    font-size:16px;
   }
 
   .logo-mark{
@@ -942,77 +1247,27 @@ footer a:hover{
     height:43px;
   }
 
-  .nav-whatsapp{
-    padding:9px 13px;
-    font-size:12px!important;
+  .nav-cta{
+    padding:8px 11px;
+    font-size:11px!important;
   }
 
-  .hero{
-    padding:48px 0;
-  }
-
-  .hero h1{
-    font-size:33px;
-    letter-spacing:0;
-  }
-
-  .hero-description{
-    font-size:14px;
-  }
-
-  .buttons{
-    flex-direction:column;
-  }
-
-  .buttons .btn{
+  .hero-actions .btn{
     width:100%;
   }
 
-  .hero-card{
-    min-height:340px;
-  }
-
-  .services{
-    grid-template-columns:1fr;
-  }
-
-  .popular-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
+  .popular-grid,
   .trust-grid{
     grid-template-columns:1fr 1fr;
   }
-
-  .section-title h2{
-    font-size:28px;
-  }
-
-  section{
-    padding:58px 0;
-  }
-
-  .cta-box{
-    padding:35px 24px;
-  }
-
-  .cta-box h2{
-    font-size:25px;
-  }
-
-  .floating-whatsapp{
-    width:56px;
-    height:56px;
-    left:15px;
-    bottom:15px;
-  }
-
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -1020,32 +1275,64 @@ footer a:hover{
 
 <div class="container nav">
 
-<a href="#" class="logo">
+<a class="logo" href="#top">
 
 <div class="logo-mark">إ</div>
 
 <div class="logo-text">
+
 مكتب الإتقان
-<small>لخدمات التعقيب والخدمات الإلكترونية</small>
+
+<small>
+لخدمات التعقيب والخدمات الإلكترونية
+</small>
+
 </div>
 
 </a>
 
-<nav class="nav-links">
 
-<a href="#services">الخدمات</a>
+<button
+class="menu-btn"
+id="menuBtn"
+aria-label="فتح القائمة">
 
-<a href="#about">من نحن</a>
+☰
 
-<a href="#how">طريقة العمل</a>
+</button>
 
-<a href="#faq">الأسئلة الشائعة</a>
+
+<nav
+class="nav-links"
+id="navLinks">
+
+<a href="#services">
+الخدمات
+</a>
+
+<a href="#featured">
+الخدمات المميزة
+</a>
+
+<a href="#about">
+من نحن
+</a>
+
+<a href="#how">
+طريقة العمل
+</a>
+
+<a href="#faq">
+الأسئلة الشائعة
+</a>
 
 <a
-class="nav-whatsapp"
-href="https://wa.me/966581458516"
+class="nav-cta"
+href="https://wa.me/966581458516?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20خدمة"
 target="_blank">
+
 واتساب
+
 </a>
 
 </nav>
@@ -1055,78 +1342,127 @@ target="_blank">
 </header>
 
 
+<!-- ================= MAIN ================= -->
+
+<main id="top">
+
+
 <!-- ================= HERO ================= -->
 
 <section class="hero">
 
 <div class="container hero-grid">
 
+
 <div>
 
 <span class="badge">
+
+<i></i>
+
 خدمات للأفراد والمنشآت في المملكة العربية السعودية
+
 </span>
 
+
 <h1>
+
 أنجز خدماتك
+
 <br>
-<span>بسهولة ووضوح</span>
+
+<span>
+بسهولة ووضوح
+</span>
+
 </h1>
 
-<p class="hero-description">
+
+<p class="hero-desc">
+
 مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية.
-نساعد الأفراد والمنشآت في متابعة الإجراءات والخدمات
-الإلكترونية، مع توضيح المتطلبات والخطوات قبل البدء.
+نساعدك في متابعة الإجراءات وتجهيز المتطلبات وتوضيح
+الخطوات قبل البدء، حسب نوع الخدمة وأهلية الطلب.
+
 </p>
 
-<div class="buttons">
+
+<div class="hero-actions">
 
 <a
-class="btn btn-primary"
+class="btn primary"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20خدمة"
 target="_blank">
+
 📲 اطلب خدمتك الآن
+
 </a>
+
 
 <a
-class="btn btn-secondary"
+class="btn secondary"
 href="#services">
+
 استعرض الخدمات
+
 </a>
 
 </div>
 
+
+<div class="hero-note">
+
+وضوح في المتطلبات • متابعة حسب الخدمة • تواصل مباشر
+
+</div>
+
 </div>
 
 
-<div class="hero-visual">
+<div class="hero-panel">
 
-<div class="hero-card">
+<div class="panel-inner">
 
-<div class="hero-inner">
-
-<div class="hero-emblem">
+<div class="emblem">
 إ
 </div>
 
-<h2>مكتب الإتقان</h2>
+<h2>
+مكتب الإتقان
+</h2>
 
 <div class="gold-line"></div>
 
 <p>
-تعقيب وخدمات إلكترونية
-للأفراد والمنشآت
+تعقيب وخدمات إلكترونية للأفراد والمنشآت
 </p>
 
-<div class="hero-pills">
 
-<span class="hero-pill">الشركات</span>
-<span class="hero-pill">الأفراد</span>
-<span class="hero-pill">العمالة</span>
-<span class="hero-pill">الضرائب</span>
-<span class="hero-pill">الإقامات</span>
+<div class="pills">
 
-</div>
+<span class="pill">
+الشركات
+</span>
+
+<span class="pill">
+الضرائب
+</span>
+
+<span class="pill">
+العمالة
+</span>
+
+<span class="pill">
+الإقامات
+</span>
+
+<span class="pill">
+الجوازات
+</span>
+
+<span class="pill">
+الأفراد
+</span>
 
 </div>
 
@@ -1145,188 +1481,514 @@ href="#services">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">خدماتنا</div>
+<div class="kicker">
+خدماتنا
+</div>
 
-<h2>حلول وخدمات في مكان واحد</h2>
+<h2>
+كل ما تحتاجه في مكان واحد
+</h2>
 
 <p>
-اختر الخدمة التي تحتاجها وتواصل معنا لمعرفة المتطلبات والتكلفة.
+خدمات مرتبة وواضحة لتصل إلى الخدمة التي تبحث عنها بسرعة.
 </p>
 
 </div>
 
 
-<div class="services">
+<div class="service-toolbar">
+
+<div class="search">
+
+<input
+id="serviceSearch"
+type="search"
+placeholder="ابحث عن خدمة..."
+aria-label="البحث عن خدمة">
+
+</div>
 
 
-<div class="service">
+<div
+class="filters"
+id="filters">
 
-<div class="service-icon">🏢</div>
+<button
+class="filter active"
+data-filter="all">
 
-<h3>خدمات الشركات والمنشآت</h3>
+الكل
+
+</button>
+
+<button
+class="filter"
+data-filter="business">
+
+الشركات
+
+</button>
+
+<button
+class="filter"
+data-filter="tax">
+
+الضرائب
+
+</button>
+
+<button
+class="filter"
+data-filter="workers">
+
+العمالة
+
+</button>
+
+<button
+class="filter"
+data-filter="individual">
+
+الأفراد
+
+</button>
+
+</div>
+
+</div>
+
+
+<div
+class="services"
+id="serviceGrid">
+
+
+<!-- COMPANY -->
+
+<article
+class="service"
+data-cat="business"
+data-search="الشركات المنشآت القوائم المالية حماية الأجور مكتب العمل">
+
+<div class="icon">
+🏢
+</div>
+
+<h3>
+خدمات الشركات والمنشآت
+</h3>
 
 <p>
-مساعدة ومتابعة في عدد من الإجراءات والخدمات الإلكترونية المتعلقة بالمنشآت.
+متابعة وتجهيز الإجراءات الإلكترونية المتعلقة بالمنشآت والخدمات الإدارية.
 </p>
 
-<ul class="service-list">
-<li>خدمات المنشآت</li>
-<li>خدمات قوى</li>
-<li>خدمات مكتب العمل</li>
-<li>القوائم المالية</li>
-<li>حماية الأجور</li>
+<ul>
+
+<li>
+خدمات المنشآت
+</li>
+
+<li>
+خدمات قوى ومكتب العمل
+</li>
+
+<li>
+رفع القوائم المالية
+</li>
+
+<li>
+حماية الأجور
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الشركات"
-target="_blank">
+class="service-action"
+data-service="خدمات الشركات والمنشآت">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
+<!-- TAX -->
+
+<article
+class="service"
+data-cat="tax"
+data-search="الضرائب الفواتير الضريبية القيمة المضافة صفر الضريبة">
+
+<div class="icon">
+📊
 </div>
 
-
-<div class="service">
-
-<div class="service-icon">👤</div>
-
-<h3>خدمات الأفراد والمقيمين</h3>
+<h3>
+الخدمات الضريبية
+</h3>
 
 <p>
-متابعة عدد من الخدمات الإلكترونية والإجراءات الخاصة بالأفراد والمقيمين.
+مساعدة في تجهيز ومتابعة الخدمات والمستندات الضريبية حسب الحالة والمتطلبات.
 </p>
 
-<ul class="service-list">
-<li>تجديد الإقامة</li>
-<li>نقل الخدمات</li>
-<li>تغيير المهنة</li>
-<li>خدمات الجوازات</li>
-<li>خدمات الزيارة</li>
+<ul>
+
+<li>
+الفواتير الضريبية المعتمدة
+</li>
+
+<li>
+ضريبة القيمة المضافة
+</li>
+
+<li>
+صفر الضريبة
+</li>
+
+<li>
+متابعة وتجهيز المستندات
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الأفراد"
-target="_blank">
+class="service-action"
+data-service="الخدمات الضريبية">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
+<!-- WORKERS -->
+
+<article
+class="service"
+data-cat="workers"
+data-search="العمالة نقل الخدمات نقل الكفالة تغيير المهنة رخص العمل اليمنية">
+
+<div class="icon">
+👷
 </div>
 
-
-<div class="service">
-
-<div class="service-icon">📊</div>
-
-<h3>الخدمات الضريبية</h3>
+<h3>
+خدمات العمالة ومكتب العمل
+</h3>
 
 <p>
-مساعدة في الإجراءات والمستندات المتعلقة بالخدمات الضريبية للمنشآت.
+متابعة إجراءات العمالة والخدمات المرتبطة بمكتب العمل وفق المتطلبات المعمول بها.
 </p>
 
-<ul class="service-list">
-<li>الفواتير الضريبية</li>
-<li>ضريبة القيمة المضافة</li>
-<li>متابعة الإجراءات</li>
-<li>تجهيز المستندات</li>
-<li>الاستفسارات الضريبية</li>
+<ul>
+
+<li>
+نقل الخدمات
+</li>
+
+<li>
+تغيير المهنة
+</li>
+
+<li>
+تعديل رسوم المهنة
+</li>
+
+<li>
+مخالفات واعتراضات مكتب العمل
+</li>
+
+<li>
+العمالة اليمنية
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20الخدمات%20الضريبية"
-target="_blank">
+class="service-action"
+data-service="خدمات العمالة ومكتب العمل">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
+<!-- INDIVIDUALS -->
+
+<article
+class="service"
+data-cat="individual"
+data-search="الأفراد المقيمين إقامة جوازات زيارة">
+
+<div class="icon">
+👤
 </div>
 
-
-<div class="service">
-
-<div class="service-icon">👷</div>
-
-<h3>خدمات العمالة</h3>
+<h3>
+خدمات الأفراد والمقيمين
+</h3>
 
 <p>
-متابعة الخدمات والإجراءات المتعلقة بالعمالة وفق المتطلبات والأنظمة المعمول بها.
+خدمات ومتابعة للإجراءات الإلكترونية الخاصة بالأفراد والمقيمين حسب أهلية الطلب.
 </p>
 
-<ul class="service-list">
-<li>نقل الخدمات</li>
-<li>تغيير المهنة</li>
-<li>خدمات رخص العمل</li>
-<li>متابعة الإجراءات</li>
-<li>خدمات العمالة اليمنية حسب المتطلبات</li>
+<ul>
+
+<li>
+تجديد وإصدار الإقامة
+</li>
+
+<li>
+نقل الخدمات
+</li>
+
+<li>
+تغيير المهنة
+</li>
+
+<li>
+خدمات الجوازات والزيارات
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20العمالة"
-target="_blank">
+class="service-action"
+data-service="خدمات الأفراد والمقيمين">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
+<!-- PASSPORT -->
+
+<article
+class="service"
+data-cat="individual"
+data-search="الجوازات الإقامات تجديد إصدار زيارة تمديد">
+
+<div class="icon">
+🛂
 </div>
 
-
-<div class="service">
-
-<div class="service-icon">🛂</div>
-
-<h3>خدمات الجوازات والإقامات</h3>
+<h3>
+الجوازات والإقامات والزيارات
+</h3>
 
 <p>
-مساعدة ومتابعة في الخدمات الإلكترونية المرتبطة بالإقامات والجوازات والزيارات.
+مساعدة ومتابعة في الإجراءات الإلكترونية المرتبطة بالجوازات والإقامات والزيارات.
 </p>
 
-<ul class="service-list">
-<li>تجديد الإقامات</li>
-<li>متابعة الخدمات</li>
-<li>الزيارات</li>
-<li>تمديد الزيارة حسب الأهلية</li>
-<li>الإجراءات الإلكترونية</li>
+<ul>
+
+<li>
+تجديد الإقامات
+</li>
+
+<li>
+إصدار الإقامات حسب الأهلية
+</li>
+
+<li>
+خدمات الجوازات
+</li>
+
+<li>
+تمديد صلاحية الزيارة حسب الأهلية
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الجوازات%20والإقامات"
-target="_blank">
+class="service-action"
+data-service="خدمات الجوازات والإقامات والزيارات">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
+<!-- ELECTRONIC -->
+
+<article
+class="service"
+data-cat="business"
+data-search="إلكترونية إدارية طلبات مستندات متابعة معاملات">
+
+<div class="icon">
+💻
 </div>
 
-
-<div class="service">
-
-<div class="service-icon">💻</div>
-
-<h3>الخدمات الإلكترونية والإدارية</h3>
+<h3>
+الخدمات الإلكترونية والإدارية
+</h3>
 
 <p>
-مساعدة في تجهيز الطلبات والمستندات ومتابعة الإجراءات الإلكترونية حسب الخدمة.
+تجهيز الطلبات والمستندات ومتابعة الإجراءات الإلكترونية حسب الخدمة.
 </p>
 
-<ul class="service-list">
-<li>تجهيز المتطلبات</li>
-<li>متابعة الطلبات</li>
-<li>الاستعلام عن الإجراءات</li>
-<li>الخدمات الإلكترونية</li>
-<li>المعاملات الإدارية</li>
+<ul>
+
+<li>
+تجهيز المتطلبات
+</li>
+
+<li>
+متابعة الطلبات
+</li>
+
+<li>
+الاستعلام عن الإجراءات
+</li>
+
+<li>
+المعاملات الإدارية
+</li>
+
 </ul>
 
 <a
-class="service-link"
-href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمة%20إدارية"
-target="_blank">
+class="service-action"
+data-service="الخدمات الإلكترونية والإدارية">
+
 اطلب الخدمة ←
+
 </a>
 
+</article>
+
+
 </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section
+id="featured"
+class="featured">
+
+<div class="container">
+
+<div class="section-head">
+
+<div class="kicker">
+خدمات مميزة
+</div>
+
+<h2>
+خدمات تستحق أن تعرفها
+</h2>
+
+<p>
+اختر الخدمة وتواصل معنا لمعرفة المتطلبات والتكلفة قبل البدء.
+</p>
+
+</div>
+
+
+<div class="featured-grid">
+
+
+<article class="feature">
+
+<span class="tag">
+ضريبي
+</span>
+
+<h3>
+صفر الضريبة
+</h3>
+
+<p>
+مساعدة في إجراءات ومتطلبات الخدمة بحسب حالة المنشأة وأهلية الطلب.
+</p>
+
+<strong>
+اطلب تفاصيل الخدمة عبر واتساب
+</strong>
+
+<a
+class="go"
+data-service="صفر الضريبة">
+
+استفسر الآن
+
+</a>
+
+</article>
+
+
+<article class="feature warn">
+
+<span class="tag">
+للشركات
+</span>
+
+<h3>
+القوائم المالية
+</h3>
+
+<p>
+مساعدة في رفع القوائم المالية ومتابعة الإجراء لتجنب التأخر وما قد يترتب عليه من مخالفات.
+</p>
+
+<strong>
+مخالفة عدم رفع القوائم المالية: 8000 ريال
+</strong>
+
+<a
+class="go"
+data-service="رفع القوائم المالية وتجنب مخالفة 8000 ريال">
+
+استفسر الآن
+
+</a>
+
+</article>
+
+
+<article class="feature gold">
+
+<span class="tag">
+مكتب العمل
+</span>
+
+<h3>
+المخالفات والاعتراضات
+</h3>
+
+<p>
+مساعدة في متابعة المخالفات والاعتراضات وتجهيز ما يلزم حسب الحالة.
+</p>
+
+<strong>
+تواصل معنا لتقييم الحالة
+</strong>
+
+<a
+class="go"
+data-service="مخالفات واعتراضات مكتب العمل">
+
+استفسر الآن
+
+</a>
+
+</article>
 
 
 </div>
@@ -1342,14 +2004,18 @@ target="_blank">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">الأكثر طلبًا</div>
+<div class="kicker">
+الأكثر طلبًا
+</div>
 
-<h2>خدمات يكثر الطلب عليها</h2>
+<h2>
+خدمات يكثر الطلب عليها
+</h2>
 
 <p>
-تواصل معنا لمعرفة المتطلبات والتكلفة قبل البدء.
+وصول سريع إلى أبرز الخدمات.
 </p>
 
 </div>
@@ -1357,45 +2023,94 @@ target="_blank">
 
 <div class="popular-grid">
 
-<div class="popular-item">
+
+<a
+class="popular-item"
+data-service="خدمات الشركات">
+
 <span>🏢</span>
+
 خدمات الشركات
-</div>
 
-<div class="popular-item">
+</a>
+
+
+<a
+class="popular-item"
+data-service="تجديد الإقامة">
+
 <span>🪪</span>
+
 تجديد الإقامة
-</div>
 
-<div class="popular-item">
+</a>
+
+
+<a
+class="popular-item"
+data-service="نقل الخدمات">
+
 <span>🔄</span>
+
 نقل الخدمات
-</div>
 
-<div class="popular-item">
+</a>
+
+
+<a
+class="popular-item"
+data-service="تغيير المهنة">
+
 <span>👷</span>
+
 تغيير المهنة
-</div>
 
-<div class="popular-item">
+</a>
+
+
+<a
+class="popular-item"
+data-service="الفواتير الضريبية">
+
 <span>📊</span>
-الخدمات الضريبية
-</div>
 
-<div class="popular-item">
+الفواتير الضريبية
+
+</a>
+
+
+<a
+class="popular-item"
+data-service="رفع القوائم المالية">
+
 <span>📄</span>
+
 القوائم المالية
-</div>
 
-<div class="popular-item">
+</a>
+
+
+<a
+class="popular-item"
+data-service="تمديد الزيارة">
+
 <span>🛂</span>
-خدمات الزيارة
-</div>
 
-<div class="popular-item">
-<span>💻</span>
-الخدمات الإلكترونية
-</div>
+تمديد الزيارة
+
+</a>
+
+
+<a
+class="popular-item"
+data-service="حماية الأجور">
+
+<span>💼</span>
+
+حماية الأجور
+
+</a>
+
 
 </div>
 
@@ -1410,14 +2125,18 @@ target="_blank">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">لماذا الإتقان؟</div>
+<div class="kicker">
+لماذا الإتقان؟
+</div>
 
-<h2>خدمة واضحة من البداية</h2>
+<h2>
+تجربة واضحة من البداية
+</h2>
 
 <p>
-نسعى لتقديم تجربة سهلة وواضحة للعميل.
+هدفنا أن تعرف ما تحتاجه قبل أن تبدأ.
 </p>
 
 </div>
@@ -1425,29 +2144,74 @@ target="_blank">
 
 <div class="trust-grid">
 
-<div class="trust-box">
-<div class="trust-number">01</div>
-<h3>تواصل مباشر</h3>
-<p>التواصل عبر واتساب بسهولة.</p>
-</div>
 
 <div class="trust-box">
-<div class="trust-number">02</div>
-<h3>وضوح</h3>
-<p>معرفة المتطلبات قبل البدء.</p>
+
+<div class="trust-number">
+01
 </div>
 
-<div class="trust-box">
-<div class="trust-number">03</div>
-<h3>متابعة</h3>
-<p>متابعة الإجراءات حسب الخدمة.</p>
+<h3>
+تواصل مباشر
+</h3>
+
+<p>
+تواصل سريع ومباشر عبر واتساب.
+</p>
+
 </div>
 
+
 <div class="trust-box">
-<div class="trust-number">04</div>
-<h3>تنوع الخدمات</h3>
-<p>للأفراد والمنشآت.</p>
+
+<div class="trust-number">
+02
 </div>
+
+<h3>
+وضوح
+</h3>
+
+<p>
+توضيح المتطلبات والخطوات قبل البدء.
+</p>
+
+</div>
+
+
+<div class="trust-box">
+
+<div class="trust-number">
+03
+</div>
+
+<h3>
+متابعة
+</h3>
+
+<p>
+متابعة الإجراء بحسب نوع الخدمة.
+</p>
+
+</div>
+
+
+<div class="trust-box">
+
+<div class="trust-number">
+04
+</div>
+
+<h3>
+تنوع
+</h3>
+
+<p>
+خدمات متعددة للأفراد والمنشآت.
+</p>
+
+</div>
+
 
 </div>
 
@@ -1458,29 +2222,41 @@ target="_blank">
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="about">
+<section
+id="about"
+class="about">
 
 <div class="container about-grid">
 
+
 <div class="about-box">
 
-<h2>عن مكتب الإتقان</h2>
+<h2>
+عن مكتب الإتقان
+</h2>
 
 <p>
-مكتب الإتقان لخدمات التعقيب يقدم خدمات التعقيب
-والمساعدة في الإجراءات الإلكترونية للأفراد والمنشآت،
-مع الحرص على توضيح المتطلبات والخطوات قبل البدء.
+مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية يقدم المساعدة في الإجراءات وتجهيز المتطلبات ومتابعة الخدمات للأفراد والمنشآت، مع الحرص على الوضوح قبل البدء.
 </p>
 
-<div class="about-points">
 
-<div>✓ تواصل واضح مع العميل</div>
+<div class="points">
 
-<div>✓ توضيح المتطلبات قبل البدء</div>
+<div>
+✓ شرح الخدمة والمتطلبات بصورة واضحة
+</div>
 
-<div>✓ متابعة الإجراءات حسب الخدمة</div>
+<div>
+✓ تواصل مباشر مع العميل
+</div>
 
-<div>✓ خدمات متنوعة للأفراد والمنشآت</div>
+<div>
+✓ متابعة الإجراء حسب الخدمة
+</div>
+
+<div>
+✓ خدمات متنوعة للأفراد والمنشآت
+</div>
 
 </div>
 
@@ -1491,52 +2267,31 @@ target="_blank">
 
 <div class="about-feature-content">
 
-<div class="big-icon">🤝</div>
+<div class="big">
+🤝
+</div>
 
-<h2>خدمتنا تبدأ من فهم طلبك</h2>
+<h2>
+خدمتنا تبدأ من فهم طلبك
+</h2>
 
 <p>
-أرسل لنا اسم الخدمة التي تحتاجها،
-وسنساعدك في معرفة المتطلبات والخطوات المناسبة قبل البدء.
+أرسل اسم الخدمة التي تحتاجها، وسنوضح لك المتطلبات والخطوات والتكلفة قبل البدء.
 </p>
 
+
 <a
-class="btn btn-primary"
-style="margin-top:20px;background:linear-gradient(135deg,#c9a24a,#e1c477);color:#082e23;"
+class="btn"
+style="margin-top:20px;background:linear-gradient(135deg,#c9a24a,#ead28e);color:#082e23"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank">
+
 تواصل معنا
+
 </a>
 
 </div>
 
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= ADS ================= -->
-
-<section class="ads-section">
-
-<div class="container">
-
-<div class="section-title">
-
-<div class="mini">مساحة إعلانية</div>
-
-<h2>مكانك الإعلاني</h2>
-
-<p>
-مساحة مخصصة للإعلانات بعد استيفاء متطلبات شبكة الإعلانات.
-</p>
-
-</div>
-
-<div class="ad-box">
-مساحة إعلانية
 </div>
 
 </div>
@@ -1550,14 +2305,18 @@ target="_blank">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">طريقة العمل</div>
+<div class="kicker">
+طريقة العمل
+</div>
 
-<h2>كيف تعمل الخدمة؟</h2>
+<h2>
+ثلاث خطوات بسيطة
+</h2>
 
 <p>
-ثلاث خطوات بسيطة.
+من أول رسالة حتى متابعة الإجراء.
 </p>
 
 </div>
@@ -1565,14 +2324,19 @@ target="_blank">
 
 <div class="steps">
 
+
 <div class="step">
 
-<div class="step-number">1</div>
+<div class="step-number">
+1
+</div>
 
-<h3>أرسل طلبك</h3>
+<h3>
+أرسل طلبك
+</h3>
 
 <p>
-تواصل معنا عبر واتساب واكتب الخدمة التي تحتاجها.
+اكتب اسم الخدمة التي تحتاجها عبر واتساب أو نموذج الطلب.
 </p>
 
 </div>
@@ -1580,12 +2344,16 @@ target="_blank">
 
 <div class="step">
 
-<div class="step-number">2</div>
+<div class="step-number">
+2
+</div>
 
-<h3>نعرف المتطلبات</h3>
+<h3>
+نعرف المتطلبات
+</h3>
 
 <p>
-نوضح لك المتطلبات والخطوات والتكلفة قبل البدء.
+نوضح المتطلبات والخطوات والتكلفة قبل البدء.
 </p>
 
 </div>
@@ -1593,15 +2361,20 @@ target="_blank">
 
 <div class="step">
 
-<div class="step-number">3</div>
+<div class="step-number">
+3
+</div>
 
-<h3>تبدأ المتابعة</h3>
+<h3>
+تبدأ المتابعة
+</h3>
 
 <p>
-تتم متابعة الإجراء وفق المتطلبات والأنظمة المعمول بها.
+تتم متابعة الإجراء وفق المتطلبات والأنظمة وأهلية الطلب.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1616,20 +2389,25 @@ target="_blank">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">الأسئلة الشائعة</div>
+<div class="kicker">
+الأسئلة الشائعة
+</div>
 
-<h2>هل لديك استفسار؟</h2>
+<h2>
+إجابات سريعة
+</h2>
 
 <p>
-إجابات سريعة على بعض الأسئلة.
+معلومات تساعدك قبل التواصل.
 </p>
 
 </div>
 
 
 <div class="faq">
+
 
 <details>
 
@@ -1638,8 +2416,7 @@ target="_blank">
 </summary>
 
 <p>
-يمكنك التواصل مباشرة عبر زر واتساب الموجود
-في الموقع وإرسال اسم الخدمة التي تحتاجها.
+يمكنك الضغط على أي زر واتساب في الموقع وإرسال اسم الخدمة التي تحتاجها.
 </p>
 
 </details>
@@ -1652,8 +2429,7 @@ target="_blank">
 </summary>
 
 <p>
-نعم، يمكنك الاستفسار عن المتطلبات والخطوات
-والتكلفة قبل البدء.
+نعم، يمكنك الاستفسار عن المتطلبات والخطوات والتكلفة قبل البدء.
 </p>
 
 </details>
@@ -1666,8 +2442,7 @@ target="_blank">
 </summary>
 
 <p>
-نعم، يقدم الموقع خدمات متعلقة بالأفراد والمنشآت
-حسب نوع الخدمة والمتطلبات.
+نعم، توجد خدمات للأفراد والمقيمين والمنشآت بحسب نوع الخدمة وأهلية الطلب.
 </p>
 
 </details>
@@ -1680,12 +2455,224 @@ target="_blank">
 </summary>
 
 <p>
-لا. قبول أي طلب يعتمد على الأهلية والمتطلبات
-والأنظمة والجهة المختصة. دور المكتب هو المساعدة
-في الإجراءات والمتابعة حسب الخدمة.
+لا. قبول الطلب يعتمد على الأهلية والمتطلبات والأنظمة والجهة المختصة. دور المكتب هو المساعدة في الإجراءات والمتابعة حسب الخدمة.
 </p>
 
 </details>
+
+
+<details>
+
+<summary>
+هل تكلفة كل الخدمات ثابتة؟
+</summary>
+
+<p>
+لا، تختلف التكلفة بحسب نوع الخدمة وحالتها والمتطلبات، لذلك يتم توضيح التكلفة قبل البدء.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REQUEST ================= -->
+
+<section
+class="request"
+id="request">
+
+<div class="container request-box">
+
+
+<div class="request-info">
+
+<h2>
+اطلب خدمتك بسهولة
+</h2>
+
+<p>
+اختر الخدمة واكتب طلبك، وسيتم تجهيز رسالة واتساب لك مباشرة.
+</p>
+
+
+<div class="request-points">
+
+<div>
+✓ اختيار الخدمة
+</div>
+
+<div>
+✓ وصف مختصر للطلب
+</div>
+
+<div>
+✓ إرسال مباشر إلى واتساب
+</div>
+
+<div>
+✓ الاستفسار قبل البدء
+</div>
+
+</div>
+
+</div>
+
+
+<div class="form-card">
+
+<form id="requestForm">
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>
+الاسم
+</label>
+
+<input
+id="name"
+required
+placeholder="اكتب اسمك">
+
+</div>
+
+
+<div class="field">
+
+<label>
+رقم التواصل
+</label>
+
+<input
+id="phone"
+placeholder="رقم الجوال">
+
+</div>
+
+
+<div class="field full">
+
+<label>
+الخدمة المطلوبة
+</label>
+
+
+<select
+id="serviceSelect"
+required>
+
+<option value="">
+اختر الخدمة
+</option>
+
+<option>
+خدمات الشركات والمنشآت
+</option>
+
+<option>
+صفر الضريبة
+</option>
+
+<option>
+الفواتير الضريبية
+</option>
+
+<option>
+رفع القوائم المالية
+</option>
+
+<option>
+مخالفات واعتراضات مكتب العمل
+</option>
+
+<option>
+حماية الأجور
+</option>
+
+<option>
+نقل الخدمات
+</option>
+
+<option>
+تغيير المهنة
+</option>
+
+<option>
+تعديل رسوم المهنة
+</option>
+
+<option>
+تجديد وإصدار الإقامة
+</option>
+
+<option>
+خدمات الجوازات
+</option>
+
+<option>
+تمديد الزيارة
+</option>
+
+<option>
+العمالة اليمنية
+</option>
+
+<option>
+خدمات إلكترونية وإدارية
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+تفاصيل الطلب
+</label>
+
+<textarea
+id="details"
+placeholder="اكتب باختصار ما تحتاجه...">
+</textarea>
+
+</div>
+
+
+<div class="field full">
+
+<button
+class="btn primary"
+type="submit">
+
+📲 إرسال الطلب عبر واتساب
+
+</button>
+
+</div>
+
+
+</div>
+
+
+<div class="form-note">
+
+ملاحظة: قبول أي خدمة أو طلب يخضع للأهلية والمتطلبات والأنظمة والجهة المختصة.
+
+</div>
+
+
+</form>
 
 </div>
 
@@ -1702,24 +2689,22 @@ target="_blank">
 
 <div class="cta-box">
 
-<div class="cta-content">
-
 <h2>
 عندك معاملة أو خدمة تحتاجها؟
 </h2>
 
 <p>
-أرسل اسم الخدمة عبر واتساب وسنوضح لك المتطلبات والخطوات.
+أرسل اسم الخدمة وسنوضح لك المتطلبات والخطوات والتكلفة قبل البدء.
 </p>
 
 <a
 class="btn"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank">
-📲 تواصل معنا عبر واتساب
-</a>
 
-</div>
+📲 تواصل معنا عبر واتساب
+
+</a>
 
 </div>
 
@@ -1734,14 +2719,18 @@ target="_blank">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-head">
 
-<div class="mini">تواصل معنا</div>
+<div class="kicker">
+تواصل معنا
+</div>
 
-<h2>نحن بانتظار استفسارك</h2>
+<h2>
+نحن بانتظار استفسارك
+</h2>
 
 <p>
-اختر الطريقة المناسبة للتواصل معنا.
+اختر الطريقة المناسبة لبدء التواصل.
 </p>
 
 </div>
@@ -1752,17 +2741,21 @@ target="_blank">
 
 <div class="contact-card">
 
-<h3>📱 واتساب</h3>
+<h3>
+📱 واتساب
+</h3>
 
 <p>
 للاستفسار عن الخدمات والمتطلبات والتكلفة.
 </p>
 
 <a
-class="contact-button"
+class="contact-btn"
 href="https://wa.me/966581458516"
 target="_blank">
+
 فتح واتساب
+
 </a>
 
 </div>
@@ -1770,17 +2763,20 @@ target="_blank">
 
 <div class="contact-card">
 
-<h3>🏢 مكتب الإتقان</h3>
+<h3>
+🏢 مكتب الإتقان
+</h3>
 
 <p>
-لخدمات التعقيب والخدمات الإلكترونية
-للأفراد والمنشآت.
+لخدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت.
 </p>
 
 <a
-class="contact-button"
+class="contact-btn"
 href="#services">
+
 مشاهدة الخدمات
+
 </a>
 
 </div>
@@ -1793,11 +2789,15 @@ href="#services">
 </section>
 
 
+</main>
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
 <div class="container">
+
 
 <div class="footer-grid">
 
@@ -1809,8 +2809,7 @@ href="#services">
 </div>
 
 <p>
-لخدمات التعقيب والخدمات الإلكترونية
-للأفراد والمنشآت.
+لخدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت.
 </p>
 
 </div>
@@ -1822,13 +2821,25 @@ href="#services">
 روابط
 </div>
 
-<a href="#services">الخدمات</a>
+<a href="#services">
+الخدمات
+</a>
 
-<a href="#about">من نحن</a>
+<a href="#featured">
+الخدمات المميزة
+</a>
 
-<a href="#how">طريقة العمل</a>
+<a href="#about">
+من نحن
+</a>
 
-<a href="#faq">الأسئلة الشائعة</a>
+<a href="#how">
+طريقة العمل
+</a>
+
+<a href="#faq">
+الأسئلة الشائعة
+</a>
 
 </div>
 
@@ -1842,10 +2853,12 @@ href="#services">
 <a
 href="https://wa.me/966581458516"
 target="_blank">
+
 واتساب
+
 </a>
 
-<a href="#services">
+<a href="#request">
 اطلب خدمة
 </a>
 
@@ -1861,6 +2874,7 @@ target="_blank">
 
 </div>
 
+
 </div>
 
 </footer>
@@ -1869,7 +2883,7 @@ target="_blank">
 <!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
-class="floating-whatsapp"
+class="floating"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank"
 aria-label="واتساب">
@@ -1878,5 +2892,290 @@ aria-label="واتساب">
 
 </a>
 
+
+<div
+class="toast"
+id="toast">
+
+تم تجهيز طلبك وإرساله إلى واتساب.
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const WA = "966581458516";
+
+
+/* MOBILE MENU */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const navLinks =
+document.getElementById("navLinks");
+
+
+menuBtn.addEventListener(
+"click",
+() => {
+
+navLinks.classList.toggle("open");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+link.addEventListener(
+"click",
+() => {
+
+navLinks.classList.remove("open");
+
+});
+
+});
+
+
+/* SERVICE FILTER */
+
+const search =
+document.getElementById("serviceSearch");
+
+const cards =
+[
+  ...document.querySelectorAll(".service")
+];
+
+
+let activeFilter = "all";
+
+
+function filterServices(){
+
+const q =
+(search.value || "")
+.trim()
+.toLowerCase();
+
+
+cards.forEach(card => {
+
+const okCat =
+activeFilter === "all" ||
+card.dataset.cat === activeFilter;
+
+
+const text =
+(
+card.dataset.search +
+" " +
+card.innerText
+)
+.toLowerCase();
+
+
+const okText =
+text.includes(q);
+
+
+card.style.display =
+okCat && okText
+? ""
+: "none";
+
+});
+
+}
+
+
+search.addEventListener(
+"input",
+filterServices
+);
+
+
+document
+.querySelectorAll(".filter")
+.forEach(button => {
+
+button.addEventListener(
+"click",
+() => {
+
+document
+.querySelectorAll(".filter")
+.forEach(x =>
+x.classList.remove("active")
+);
+
+button.classList.add("active");
+
+activeFilter =
+button.dataset.filter;
+
+filterServices();
+
+});
+
+});
+
+
+/* WHATSAPP SERVICE */
+
+function openWhatsApp(service){
+
+const message =
+`السلام عليكم، أرغب بالاستفسار عن خدمة: ${service}`;
+
+window.open(
+`https://wa.me/${WA}?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+}
+
+
+/* SERVICE BUTTONS */
+
+document
+.querySelectorAll("[data-service]")
+.forEach(element => {
+
+element.addEventListener(
+"click",
+event => {
+
+event.preventDefault();
+
+const service =
+element.dataset.service;
+
+
+const select =
+document.getElementById("serviceSelect");
+
+
+if(select){
+
+const option =
+[
+...select.options
+]
+.find(
+o => o.text === service
+);
+
+
+if(option){
+
+select.value = service;
+
+document
+.getElementById("request")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+return;
+
+}
+
+}
+
+
+openWhatsApp(service);
+
+});
+
+});
+
+
+/* REQUEST FORM */
+
+document
+.getElementById("requestForm")
+.addEventListener(
+"submit",
+event => {
+
+event.preventDefault();
+
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+
+const phone =
+document
+.getElementById("phone")
+.value
+.trim();
+
+
+const service =
+document
+.getElementById("serviceSelect")
+.value;
+
+
+const details =
+document
+.getElementById("details")
+.value
+.trim();
+
+
+const message =
+`السلام عليكم، أرغب بطلب خدمة من مكتب الإتقان.
+
+الاسم: ${name}
+
+رقم التواصل: ${phone || "لم يذكر"}
+
+الخدمة: ${service}
+
+التفاصيل:
+${details || "لا توجد تفاصيل إضافية"}`;
+
+
+window.open(
+`https://wa.me/${WA}?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+
+const toast =
+document.getElementById("toast");
+
+
+toast.classList.add("show");
+
+
+setTimeout(
+() => {
+
+toast.classList.remove("show");
+
+},
+3000
+);
+
+});
+
+
+</script>
+
 </body>
 </html>
+...
+
+[الرسالة مقتطعة]  عرض الرسالة بالكامل
