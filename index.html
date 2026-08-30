@@ -5,18 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>مكتب الإتقان | لخدمات التعقيب والخدمات الإلكترونية</title>
+<title>مكتب الإتقان | التعقيب والخدمات الإلكترونية</title>
 
 <meta name="description" content="مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت في المملكة العربية السعودية.">
-<meta name="keywords" content="مكتب الإتقان, تعقيب, خدمات إلكترونية, خدمات شركات, خدمات أفراد, تجديد إقامة, نقل خدمات, تغيير مهنة, خدمات السعودية">
-<meta name="author" content="مكتب الإتقان">
-
-<meta name="theme-color" content="#075b43">
-<meta name="color-scheme" content="light">
-
-<meta property="og:title" content="مكتب الإتقان | خدمات التعقيب والخدمات الإلكترونية">
-<meta property="og:description" content="خدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت في المملكة العربية السعودية.">
-<meta property="og:type" content="website">
+<meta name="theme-color" content="#061f18">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,26 +17,20 @@
 <style>
 :root{
     --green:#075b43;
-    --green-dark:#043b2c;
-    --green-deep:#021f17;
-    --green-light:#0b8a62;
-    --green-bright:#18ad7b;
-
+    --green2:#0b8b64;
+    --green3:#18b982;
+    --deep:#031c15;
+    --deep2:#062d21;
     --gold:#c9a24a;
-    --gold-light:#e4c879;
-
+    --gold2:#efd58a;
     --white:#fff;
-    --cream:#fbfaf5;
-    --bg:#f4f8f6;
-
-    --text:#14241e;
-    --muted:#687871;
-    --border:#dfe9e4;
-
-    --shadow:0 18px 50px rgba(5,53,39,.09);
-    --shadow-lg:0 30px 80px rgba(5,53,39,.16);
-
-    --radius:22px;
+    --cream:#f7faf8;
+    --text:#172821;
+    --muted:#687770;
+    --border:#dce9e3;
+    --shadow:0 25px 70px rgba(3,35,26,.12);
+    --shadow3d:0 35px 80px rgba(2,38,28,.20);
+    --radius:24px;
 }
 
 *{
@@ -55,12 +41,11 @@
 
 html{
     scroll-behavior:smooth;
-    scroll-padding-top:90px;
 }
 
 body{
-    font-family:"Cairo",Tahoma,Arial,sans-serif;
-    background:var(--bg);
+    font-family:'Cairo',Tahoma,Arial,sans-serif;
+    background:var(--cream);
     color:var(--text);
     line-height:1.9;
     overflow-x:hidden;
@@ -71,8 +56,8 @@ body.menu-open{
 }
 
 a{
-    color:inherit;
     text-decoration:none;
+    color:inherit;
 }
 
 button,
@@ -86,82 +71,90 @@ button{
 }
 
 .container{
-    width:min(92%,1200px);
+    width:92%;
+    max-width:1220px;
     margin:auto;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER
+========================= */
 
 header{
     position:sticky;
     top:0;
     z-index:10000;
-
-    background:rgba(255,255,255,.94);
-    border-bottom:1px solid rgba(223,233,228,.85);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+    border-bottom:1px solid rgba(220,233,227,.8);
 }
 
 .nav{
     min-height:78px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
+    gap:25px;
 }
 
 .logo{
     display:flex;
     align-items:center;
     gap:12px;
-    flex-shrink:0;
 }
 
 .logo-mark{
-    width:48px;
-    height:48px;
-
+    position:relative;
+    width:49px;
+    height:49px;
     display:grid;
     place-items:center;
-
-    border-radius:15px;
-
     color:#fff;
     font-size:22px;
     font-weight:900;
+    border-radius:16px;
+    background:
+        linear-gradient(145deg,#13a875,#034c38);
+    box-shadow:
+        inset 2px 2px 5px rgba(255,255,255,.25),
+        inset -4px -5px 10px rgba(0,0,0,.18),
+        0 12px 28px rgba(7,91,67,.25);
+    transform:perspective(500px) rotateX(4deg);
+}
 
-    background:linear-gradient(135deg,var(--green-light),var(--green));
-
-    box-shadow:0 9px 25px rgba(11,138,98,.22);
+.logo-mark::after{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.18);
 }
 
 .logo-text{
     color:var(--green);
-    font-size:21px;
+    font-size:20px;
     font-weight:900;
-    line-height:1.2;
+    line-height:1.15;
 }
 
 .logo-text small{
     display:block;
-    margin-top:3px;
-    color:#7b8983;
-    font-size:9px;
+    margin-top:4px;
+    color:#77857f;
+    font-size:8px;
     font-weight:600;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:24px;
+    gap:22px;
 }
 
 .nav-links a{
     position:relative;
-    color:#43534c;
+    color:#41524b;
     font-size:13px;
     font-weight:800;
     transition:.25s;
@@ -171,45 +164,41 @@ header{
     content:"";
     position:absolute;
     right:0;
-    bottom:-7px;
+    bottom:-8px;
     width:0;
     height:2px;
-    border-radius:10px;
-    background:var(--green-light);
+    border-radius:5px;
+    background:var(--green3);
     transition:.25s;
 }
 
 .nav-links a:hover{
-    color:var(--green-light);
+    color:var(--green2);
 }
 
-.nav-links a:not(.nav-whatsapp):hover::after{
+.nav-links a:hover::after{
     width:100%;
 }
 
 .nav-whatsapp{
-    padding:10px 17px;
-    border-radius:12px;
+    padding:11px 18px;
+    border-radius:13px;
     color:#fff!important;
-    background:linear-gradient(135deg,var(--green-light),var(--green));
-    box-shadow:0 8px 20px rgba(11,138,98,.18);
+    background:linear-gradient(135deg,var(--green3),var(--green));
+    box-shadow:
+        0 10px 25px rgba(11,139,100,.22),
+        inset 0 1px 1px rgba(255,255,255,.25);
 }
 
 .menu-toggle{
     display:none;
-
     width:45px;
     height:45px;
-
     border:1px solid var(--border);
-    border-radius:13px;
-
+    border-radius:14px;
     background:#fff;
     color:var(--green);
-
-    font-size:23px;
-    font-weight:900;
-
+    font-size:22px;
     align-items:center;
     justify-content:center;
 }
@@ -219,94 +208,83 @@ header{
     position:fixed;
     inset:0;
     z-index:9990;
-    background:rgba(2,31,23,.38);
-    backdrop-filter:blur(3px);
+    background:rgba(0,25,18,.42);
+    backdrop-filter:blur(5px);
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     position:relative;
+    min-height:700px;
+    display:flex;
+    align-items:center;
     overflow:hidden;
-
-    padding:92px 0 85px;
-
+    padding:90px 0;
     background:
-        radial-gradient(circle at 85% 15%,rgba(201,162,74,.18),transparent 21%),
-        radial-gradient(circle at 15% 85%,rgba(22,169,120,.13),transparent 27%),
-        linear-gradient(135deg,#fff,#edf7f2);
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    width:440px;
-    height:440px;
-    border:70px solid rgba(11,138,98,.035);
-    border-radius:50%;
-    left:-200px;
-    bottom:-250px;
+        radial-gradient(circle at 80% 20%,rgba(201,162,74,.16),transparent 22%),
+        radial-gradient(circle at 10% 80%,rgba(24,185,130,.14),transparent 25%),
+        linear-gradient(135deg,#fff,#eef8f3);
 }
 
 .hero-grid{
     position:relative;
     z-index:2;
-
     display:grid;
     grid-template-columns:1.05fr .95fr;
-    gap:65px;
+    gap:70px;
     align-items:center;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
-    gap:8px;
-
-    padding:7px 15px;
-
-    border:1px solid #cce8da;
-    border-radius:40px;
-
-    background:#e2f4eb;
+    gap:9px;
+    padding:8px 16px;
+    border:1px solid #cde5d9;
+    border-radius:50px;
+    background:rgba(226,245,237,.85);
     color:var(--green);
-
     font-size:12px;
     font-weight:800;
+    box-shadow:0 8px 25px rgba(7,91,67,.06);
 }
 
-.badge::before{
-    content:"";
+.badge i{
     width:8px;
     height:8px;
     border-radius:50%;
     background:var(--gold);
-    box-shadow:0 0 0 5px rgba(201,162,74,.1);
+    box-shadow:0 0 0 5px rgba(201,162,74,.12);
 }
 
 .hero h1{
-    margin:22px 0 17px;
-
-    font-size:54px;
-    line-height:1.32;
+    margin:23px 0 18px;
+    font-size:55px;
+    line-height:1.3;
     font-weight:900;
-    letter-spacing:-1.5px;
+    letter-spacing:-1px;
 }
 
-.hero h1 span{
-    color:var(--green-light);
+.gradient-text{
+    background:linear-gradient(90deg,var(--green3),var(--green));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 .hero-description{
     max-width:650px;
     color:var(--muted);
-    font-size:17px;
+    font-size:16px;
 }
 
 .buttons{
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
+    gap:13px;
     margin-top:30px;
 }
 
@@ -315,124 +293,132 @@ header{
     align-items:center;
     justify-content:center;
     gap:8px;
-
-    min-height:50px;
-    padding:13px 23px;
-
-    border-radius:13px;
-
+    padding:14px 24px;
+    border-radius:14px;
     font-size:14px;
-    font-weight:800;
-
-    transition:.25s;
+    font-weight:900;
+    transition:.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 }
 
 .btn-primary{
     color:#fff;
-    background:linear-gradient(135deg,var(--green-light),var(--green));
-    box-shadow:0 12px 28px rgba(11,138,98,.22);
+    background:linear-gradient(135deg,#12ad79,#07543f);
+    box-shadow:
+        0 15px 30px rgba(7,91,67,.22),
+        inset 0 1px 1px rgba(255,255,255,.22);
 }
 
 .btn-secondary{
     color:var(--green);
     background:#fff;
     border:1px solid var(--border);
+    box-shadow:0 8px 20px rgba(3,35,26,.05);
 }
 
-/* ================= HERO CARD ================= */
+/* =========================
+   3D HERO CARD
+========================= */
+
+.hero-visual{
+    perspective:1200px;
+}
 
 .hero-card{
     position:relative;
+    min-height:450px;
     overflow:hidden;
-
-    min-height:420px;
-    padding:28px;
-
+    padding:25px;
+    border-radius:34px;
+    background:
+        radial-gradient(circle at 25% 15%,rgba(24,185,130,.18),transparent 25%),
+        linear-gradient(145deg,#0b6449,#031b14);
     border:5px solid rgba(255,255,255,.82);
-    border-radius:32px;
+    box-shadow:
+        0 45px 90px rgba(3,38,28,.22),
+        0 10px 25px rgba(3,38,28,.08),
+        inset 0 1px 1px rgba(255,255,255,.13);
+    transform:rotateY(-5deg) rotateX(3deg);
+    transition:.5s;
+}
 
-    background:linear-gradient(145deg,#0a5d45,#063426);
-
-    box-shadow:var(--shadow-lg);
+.hero-card:hover{
+    transform:rotateY(0) rotateX(0) translateY(-7px);
 }
 
 .hero-card::before{
     content:"";
     position:absolute;
-    width:280px;
-    height:280px;
+    width:330px;
+    height:330px;
+    left:-130px;
+    top:-130px;
     border-radius:50%;
-    background:rgba(201,162,74,.12);
-    top:-120px;
-    left:-90px;
+    border:55px solid rgba(255,255,255,.035);
 }
 
 .hero-card::after{
     content:"";
     position:absolute;
-    width:220px;
-    height:220px;
-    border:35px solid rgba(255,255,255,.035);
+    width:250px;
+    height:250px;
+    right:-100px;
+    bottom:-100px;
     border-radius:50%;
-    right:-80px;
-    bottom:-80px;
+    border:40px solid rgba(201,162,74,.07);
 }
 
 .hero-inner{
     position:relative;
     z-index:2;
-
-    min-height:360px;
-
+    min-height:395px;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     text-align:center;
 }
 
 .hero-emblem{
-    width:108px;
-    height:108px;
-
+    width:112px;
+    height:112px;
     display:grid;
     place-items:center;
-
-    border:2px solid rgba(225,196,119,.65);
     border-radius:32px;
-
-    background:rgba(255,255,255,.07);
-
     color:#fff;
     font-size:48px;
     font-weight:900;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.035));
+    border:1px solid rgba(239,213,138,.65);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.22),
+        inset 2px 2px 8px rgba(255,255,255,.12);
+    transform:translateZ(40px);
 }
 
 .hero-inner h2{
-    margin:19px 0 3px;
+    margin:20px 0 3px;
     color:#fff;
     font-size:31px;
     font-weight:900;
 }
 
 .hero-inner p{
-    color:#c5d8d0;
+    color:#bed2ca;
     font-size:13px;
 }
 
 .gold-line{
-    width:72px;
+    width:75px;
     height:3px;
     margin:15px auto;
     border-radius:5px;
-    background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    background:linear-gradient(90deg,var(--gold),var(--gold2));
+    box-shadow:0 0 18px rgba(201,162,74,.3);
 }
 
 .hero-pills{
@@ -440,25 +426,65 @@ header{
     flex-wrap:wrap;
     justify-content:center;
     gap:8px;
-    margin-top:15px;
+    margin-top:16px;
 }
 
 .hero-pill{
-    padding:6px 12px;
+    padding:7px 12px;
     border-radius:20px;
-    background:rgba(255,255,255,.08);
-    color:#e1ebe7;
-    font-size:11px;
+    color:#d8e5df;
+    font-size:10px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.07);
 }
 
-/* ================= GENERAL ================= */
+/* =========================
+   FLOATING 3D OBJECTS
+========================= */
+
+.floating-shape{
+    position:absolute;
+    z-index:1;
+    border-radius:24px;
+    background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,255,255,.15));
+    border:1px solid rgba(255,255,255,.65);
+    box-shadow:0 25px 60px rgba(5,53,39,.07);
+    animation:float 6s ease-in-out infinite;
+}
+
+.shape-one{
+    width:75px;
+    height:75px;
+    top:17%;
+    right:5%;
+    transform:rotate(25deg);
+}
+
+.shape-two{
+    width:45px;
+    height:45px;
+    bottom:15%;
+    left:7%;
+    transform:rotate(35deg);
+    animation-delay:1.5s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(20deg)}
+    50%{transform:translateY(-18px) rotate(30deg)}
+}
+
+/* =========================
+   SECTION
+========================= */
 
 section{
-    padding:82px 0;
+    padding:85px 0;
 }
 
 .section-title{
-    margin-bottom:44px;
+    max-width:720px;
+    margin:0 auto 45px;
     text-align:center;
 }
 
@@ -466,13 +492,12 @@ section{
     color:var(--gold);
     font-size:11px;
     font-weight:900;
-    letter-spacing:1px;
+    letter-spacing:1.5px;
 }
 
 .section-title h2{
-    margin:4px 0;
-    font-size:35px;
-    line-height:1.4;
+    margin:5px 0;
+    font-size:36px;
     font-weight:900;
 }
 
@@ -481,68 +506,57 @@ section{
     font-size:14px;
 }
 
-/* ================= SERVICES ================= */
+/* =========================
+   SERVICES
+========================= */
 
 .services{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:23px;
 }
 
 .service{
     position:relative;
     overflow:hidden;
-
-    padding:28px;
-
+    padding:29px;
+    background:rgba(255,255,255,.9);
     border:1px solid var(--border);
-    border-radius:22px;
-
-    background:#fff;
-
-    transition:.3s;
-}
-
-.service::before{
-    content:"";
-    position:absolute;
-    top:0;
-    right:0;
-    left:0;
-    height:4px;
-
-    background:linear-gradient(90deg,var(--green-light),var(--gold));
-
-    transform:scaleX(0);
-    transform-origin:right;
-
-    transition:.3s;
+    border-radius:25px;
+    box-shadow:0 12px 35px rgba(3,35,26,.04);
+    transition:.4s;
 }
 
 .service:hover{
-    transform:translateY(-7px);
-    box-shadow:var(--shadow);
+    transform:translateY(-9px);
+    box-shadow:var(--shadow3d);
+    border-color:#c6ded3;
 }
 
-.service:hover::before{
-    transform:scaleX(1);
+.service::after{
+    content:"";
+    position:absolute;
+    width:130px;
+    height:130px;
+    left:-70px;
+    bottom:-75px;
+    border-radius:50%;
+    background:rgba(11,139,100,.04);
 }
 
 .service-icon{
-    width:62px;
-    height:62px;
-
+    width:64px;
+    height:64px;
     display:grid;
     place-items:center;
-
-    margin-bottom:16px;
-
-    border:1px solid #d5ebdf;
-    border-radius:18px;
-
-    background:linear-gradient(135deg,#e3f5eb,#f4fbf7);
-
-    font-size:29px;
+    margin-bottom:17px;
+    border-radius:19px;
+    font-size:28px;
+    background:linear-gradient(145deg,#effaf5,#dcefe7);
+    border:1px solid #d0e6dc;
+    box-shadow:
+        7px 8px 16px rgba(4,65,47,.08),
+        inset 2px 2px 5px rgba(255,255,255,.9);
 }
 
 .service h3{
@@ -556,30 +570,33 @@ section{
     font-size:13px;
 }
 
-/* SERVICE DETAILS */
+/* =========================
+   SERVICE DETAILS
+========================= */
 
 .service-list{
     list-style:none;
     margin-top:17px;
-    border-top:1px solid #edf1ef;
+    padding-top:8px;
+    border-top:1px solid #edf2ef;
 }
 
 .service-detail{
-    border-bottom:1px solid #edf1ef;
+    border-bottom:1px solid #edf2ef;
+}
+
+.service-detail:last-child{
+    border-bottom:0;
 }
 
 .service-detail summary{
     position:relative;
     cursor:pointer;
     list-style:none;
-
-    padding:11px 25px 11px 4px;
-
-    color:#455750;
-    font-size:11.5px;
+    padding:10px 25px 10px 4px;
+    color:#42534c;
+    font-size:11px;
     font-weight:800;
-
-    transition:.2s;
 }
 
 .service-detail summary::-webkit-details-marker{
@@ -590,19 +607,16 @@ section{
     content:"✓";
     position:absolute;
     right:0;
-    top:10px;
-    color:var(--green-light);
+    color:var(--green2);
     font-weight:900;
 }
 
 .service-detail summary::after{
     content:"+";
     position:absolute;
-    left:3px;
-    top:7px;
-    color:var(--green-light);
-    font-size:18px;
-    font-weight:500;
+    left:2px;
+    color:var(--green2);
+    font-size:17px;
 }
 
 .service-detail[open] summary{
@@ -615,13 +629,10 @@ section{
 
 .service-detail p{
     margin:0 0 10px;
-    padding:10px 24px 10px 7px;
-
-    border-radius:10px;
-
-    background:#f7faf8;
-
-    color:#687871;
+    padding:11px 24px 11px 7px;
+    border-radius:11px;
+    background:#f5faf7;
+    color:#687770;
     font-size:10.5px;
     line-height:1.9;
 }
@@ -629,19 +640,28 @@ section{
 .detail-note{
     display:block;
     margin-top:5px;
-    color:#8a958f;
+    color:#89958f;
     font-size:9px;
 }
 
 .service-link{
+    position:relative;
+    z-index:2;
     display:inline-flex;
     margin-top:17px;
-    color:var(--green-light);
+    color:var(--green2);
     font-size:13px;
     font-weight:900;
+    transition:.25s;
 }
 
-/* ================= POPULAR ================= */
+.service-link:hover{
+    transform:translateX(-5px);
+}
+
+/* =========================
+   POPULAR
+========================= */
 
 .popular{
     background:#fff;
@@ -650,49 +670,44 @@ section{
 .popular-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:16px;
 }
 
 .popular-item{
-    padding:21px 14px;
-
-    border:1px solid var(--border);
-    border-radius:17px;
-
-    background:linear-gradient(145deg,#f8fbf9,#eef7f2);
-
+    padding:23px 14px;
     text-align:center;
-
+    background:linear-gradient(145deg,#fbfdfc,#eef7f3);
+    border:1px solid var(--border);
+    border-radius:19px;
     font-size:13px;
     font-weight:800;
-
-    transition:.25s;
+    box-shadow:
+        8px 10px 25px rgba(3,35,26,.045);
+    transition:.3s;
 }
 
 .popular-item:hover{
-    transform:translateY(-4px);
-    border-color:#b9daca;
-    box-shadow:0 12px 30px rgba(5,53,39,.06);
+    transform:translateY(-6px) rotateX(2deg);
+    box-shadow:0 20px 40px rgba(3,35,26,.1);
 }
 
 .popular-item span{
     display:block;
-    margin-bottom:4px;
+    margin-bottom:5px;
     font-size:28px;
 }
 
-/* ================= TRUST ================= */
+/* =========================
+   TRUST
+========================= */
 
 .trust{
+    position:relative;
+    overflow:hidden;
     color:#fff;
-
     background:
-        radial-gradient(circle at 90% 10%,rgba(201,162,74,.1),transparent 25%),
-        linear-gradient(135deg,#082e23,#041c15);
-}
-
-.trust .section-title p{
-    color:#aec3ba;
+        radial-gradient(circle at 90% 10%,rgba(201,162,74,.12),transparent 25%),
+        linear-gradient(135deg,#073426,#021810);
 }
 
 .trust-grid{
@@ -702,26 +717,25 @@ section{
 }
 
 .trust-box{
-    padding:27px 15px;
-
-    border:1px solid rgba(255,255,255,.09);
-    border-radius:19px;
-
-    background:rgba(255,255,255,.035);
-
+    padding:29px 15px;
     text-align:center;
-
-    transition:.25s;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:21px;
+    background:rgba(255,255,255,.045);
+    box-shadow:
+        inset 1px 1px 10px rgba(255,255,255,.025),
+        0 20px 50px rgba(0,0,0,.12);
+    transition:.3s;
 }
 
 .trust-box:hover{
-    transform:translateY(-4px);
-    background:rgba(255,255,255,.055);
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.065);
 }
 
 .trust-number{
-    color:var(--gold-light);
-    font-size:29px;
+    color:var(--gold2);
+    font-size:31px;
     font-weight:900;
 }
 
@@ -731,14 +745,16 @@ section{
 }
 
 .trust-box p{
-    color:#b7c9c2;
+    color:#b8cbc3;
     font-size:12px;
 }
 
-/* ================= ABOUT ================= */
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-    background:var(--cream);
+    background:#f8f5ec;
 }
 
 .about-grid{
@@ -748,12 +764,11 @@ section{
 }
 
 .about-box{
-    padding:34px;
-
-    border:1px solid var(--border);
-    border-radius:22px;
-
+    padding:36px;
     background:#fff;
+    border:1px solid var(--border);
+    border-radius:25px;
+    box-shadow:var(--shadow);
 }
 
 .about-box h2{
@@ -772,39 +787,34 @@ section{
 }
 
 .about-points div{
-    padding:10px 0;
+    padding:11px 0;
     border-bottom:1px solid #edf1ef;
     font-size:13px;
-    font-weight:600;
-}
-
-.about-points div:last-child{
-    border-bottom:0;
+    font-weight:700;
 }
 
 .about-feature{
     position:relative;
     overflow:hidden;
-
-    min-height:300px;
+    min-height:320px;
     padding:35px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    border-radius:22px;
-
+    text-align:center;
+    border-radius:25px;
     color:#fff;
-
-    background:linear-gradient(145deg,rgba(7,91,67,.97),rgba(4,42,31,.99));
+    background:
+        radial-gradient(circle at 25% 20%,rgba(24,185,130,.16),transparent 25%),
+        linear-gradient(145deg,#096047,#031e16);
+    box-shadow:var(--shadow3d);
 }
 
 .about-feature::before{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
+    width:320px;
+    height:320px;
     border:45px solid rgba(255,255,255,.035);
     border-radius:50%;
 }
@@ -812,7 +822,6 @@ section{
 .about-feature-content{
     position:relative;
     z-index:2;
-    text-align:center;
 }
 
 .big-icon{
@@ -820,7 +829,7 @@ section{
 }
 
 .about-feature h2{
-    margin:10px 0;
+    margin:8px 0;
     font-size:27px;
 }
 
@@ -829,75 +838,50 @@ section{
     font-size:13px;
 }
 
-/* ================= ADS ================= */
+/* =========================
+   ADS
+========================= */
 
 .ads-section{
     background:
-        radial-gradient(circle at 90% 10%,rgba(201,162,74,.09),transparent 25%),
-        #f7faf8;
+        radial-gradient(circle at 90% 10%,rgba(201,162,74,.1),transparent 25%),
+        #f6faf8;
 }
 
 .ad-space{
     position:relative;
     overflow:hidden;
-
     min-height:210px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
-    border:1px dashed #b9cec3;
-    border-radius:24px;
-
-    background:linear-gradient(135deg,#fff,#f7faf8);
-}
-
-.ad-space::before{
-    content:"";
-    position:absolute;
-    width:230px;
-    height:230px;
-    border:35px solid rgba(7,91,67,.025);
-    border-radius:50%;
-    left:-90px;
-    bottom:-130px;
-}
-
-.ad-space::after{
-    content:"";
-    position:absolute;
-    width:170px;
-    height:170px;
-    border:25px solid rgba(201,162,74,.035);
-    border-radius:50%;
-    right:-60px;
-    top:-80px;
+    border:1px dashed #a9c6b8;
+    border-radius:27px;
+    background:
+        linear-gradient(145deg,#fff,#f4faf7);
+    box-shadow:
+        inset 0 0 50px rgba(7,91,67,.025),
+        0 20px 45px rgba(3,35,26,.05);
 }
 
 .ad-space-content{
     position:relative;
     z-index:2;
-    padding:25px;
 }
 
 .ad-icon{
-    width:56px;
-    height:56px;
-
+    width:58px;
+    height:58px;
     margin:0 auto 10px;
-
     display:grid;
     place-items:center;
-
-    border-radius:16px;
-
-    background:#e9f4ef;
+    border-radius:18px;
+    background:linear-gradient(145deg,#edf8f3,#dcefe7);
     color:var(--green);
-
-    font-size:24px;
+    font-size:25px;
+    box-shadow:
+        7px 8px 18px rgba(3,65,47,.08);
 }
 
 .ad-space h3{
@@ -908,25 +892,24 @@ section{
 
 .ad-space p{
     margin-top:4px;
-    color:#89968f;
+    color:#87958e;
     font-size:11px;
 }
 
 .ad-label{
     display:inline-block;
     margin-top:10px;
-    padding:4px 11px;
-
+    padding:5px 12px;
     border-radius:20px;
-
-    background:#f1ead8;
+    background:#f3ead3;
     color:#96752d;
-
     font-size:9px;
-    font-weight:800;
+    font-weight:900;
 }
 
-/* ================= HOW ================= */
+/* =========================
+   STEPS
+========================= */
 
 .steps{
     display:grid;
@@ -936,37 +919,31 @@ section{
 
 .step{
     padding:30px;
-
-    border:1px solid var(--border);
-    border-radius:20px;
-
     background:#fff;
-
-    transition:.25s;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(3,35,26,.04);
+    transition:.3s;
 }
 
 .step:hover{
-    transform:translateY(-5px);
+    transform:translateY(-7px);
     box-shadow:var(--shadow);
 }
 
 .step-number{
-    width:48px;
-    height:48px;
-
+    width:50px;
+    height:50px;
     display:grid;
     place-items:center;
-
     margin-bottom:15px;
-
     border-radius:50%;
-
-    background:linear-gradient(135deg,var(--green-light),var(--green));
-
     color:#fff;
-
     font-size:18px;
     font-weight:900;
+    background:linear-gradient(145deg,#12ad79,#07543f);
+    box-shadow:
+        7px 9px 18px rgba(7,91,67,.18);
 }
 
 .step h3{
@@ -979,7 +956,9 @@ section{
     font-size:13px;
 }
 
-/* ================= FAQ ================= */
+/* =========================
+   FAQ
+========================= */
 
 .faq{
     max-width:850px;
@@ -989,18 +968,15 @@ section{
 .faq-item{
     margin-bottom:12px;
     padding:17px 20px;
-
-    border:1px solid var(--border);
-    border-radius:15px;
-
     background:#fff;
-
-    transition:.2s;
+    border:1px solid var(--border);
+    border-radius:16px;
+    transition:.25s;
 }
 
 .faq-item[open]{
-    border-color:#b8d8c9;
-    box-shadow:0 10px 25px rgba(5,53,39,.05);
+    border-color:#b7d8c8;
+    box-shadow:0 12px 28px rgba(3,35,26,.06);
 }
 
 .faq-item summary{
@@ -1016,22 +992,15 @@ section{
 
 .faq-item summary::before{
     content:"+";
-
     display:inline-flex;
-
-    width:25px;
-    height:25px;
-
+    width:27px;
+    height:27px;
     align-items:center;
     justify-content:center;
-
     margin-left:8px;
-
     border-radius:50%;
-
-    background:#e9f4ef;
+    background:#eaf5f0;
     color:var(--green);
-
     font-size:17px;
 }
 
@@ -1045,7 +1014,9 @@ section{
     font-size:13px;
 }
 
-/* ================= CTA ================= */
+/* =========================
+   CTA
+========================= */
 
 .cta{
     padding-top:0;
@@ -1054,29 +1025,24 @@ section{
 .cta-box{
     position:relative;
     overflow:hidden;
-
-    padding:55px;
-
-    border-radius:27px;
-
+    padding:58px;
     color:#fff;
-
+    border-radius:30px;
     background:
-        radial-gradient(circle at 90% 10%,rgba(201,162,74,.16),transparent 25%),
-        linear-gradient(135deg,#0a5b43,#041f17);
-
-    box-shadow:0 25px 60px rgba(5,53,39,.16);
+        radial-gradient(circle at 90% 10%,rgba(201,162,74,.17),transparent 25%),
+        linear-gradient(145deg,#0a6349,#031b14);
+    box-shadow:var(--shadow3d);
 }
 
 .cta-box::after{
     content:"";
     position:absolute;
-    width:250px;
-    height:250px;
-    border:40px solid rgba(255,255,255,.035);
+    width:280px;
+    height:280px;
+    left:-100px;
+    bottom:-140px;
+    border:42px solid rgba(255,255,255,.035);
     border-radius:50%;
-    left:-80px;
-    bottom:-120px;
 }
 
 .cta-content{
@@ -1100,7 +1066,9 @@ section{
     background:#fff;
 }
 
-/* ================= CONTACT ================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-grid{
     display:grid;
@@ -1109,18 +1077,16 @@ section{
 }
 
 .contact-card{
-    padding:28px;
-
-    border:1px solid var(--border);
-    border-radius:20px;
-
+    padding:29px;
     background:#fff;
-
-    transition:.25s;
+    border:1px solid var(--border);
+    border-radius:22px;
+    box-shadow:0 12px 30px rgba(3,35,26,.04);
+    transition:.3s;
 }
 
 .contact-card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-6px);
     box-shadow:var(--shadow);
 }
 
@@ -1136,28 +1102,23 @@ section{
 
 .contact-button{
     display:inline-flex;
-
     margin-top:18px;
     padding:12px 20px;
-
-    border-radius:11px;
-
+    border-radius:12px;
     color:#fff;
-
-    background:linear-gradient(135deg,var(--green-light),var(--green));
-
+    background:linear-gradient(135deg,#12ad79,#07543f);
     font-size:13px;
-    font-weight:800;
+    font-weight:900;
 }
 
-/* ================= FOOTER ================= */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    padding:45px 0 25px;
-
-    background:#03150f;
+    padding:48px 0 25px;
     color:#cbd6d1;
-
+    background:#02150f;
     font-size:12px;
 }
 
@@ -1168,7 +1129,7 @@ footer{
 }
 
 .footer-title{
-    margin-bottom:9px;
+    margin-bottom:10px;
     color:#fff;
     font-size:18px;
     font-weight:900;
@@ -1191,92 +1152,60 @@ footer a:hover{
 }
 
 .copyright{
-    margin-top:28px;
+    margin-top:30px;
     padding-top:20px;
-
     border-top:1px solid rgba(255,255,255,.08);
-
     color:#788d84;
     text-align:center;
 }
 
-/* ================= WHATSAPP ================= */
+/* =========================
+   WHATSAPP
+========================= */
 
 .floating-whatsapp{
     position:fixed;
-
     left:22px;
     bottom:22px;
-
     z-index:9998;
-
-    width:61px;
-    height:61px;
-
+    width:62px;
+    height:62px;
     display:grid;
     place-items:center;
-
     border-radius:50%;
-
     color:#fff;
-
-    background:#19a765;
-
     font-size:27px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.22);
-
-    transition:.25s;
+    background:linear-gradient(145deg,#20bd76,#098e55);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.2),
+        inset 2px 2px 5px rgba(255,255,255,.25);
+    transition:.3s;
 }
 
 .floating-whatsapp:hover{
-    transform:scale(1.08);
+    transform:scale(1.1) translateY(-3px);
 }
 
-/* ================= BACK TO TOP ================= */
+/* =========================
+   REVEAL
+========================= */
 
-.back-top{
-    position:fixed;
-
-    right:22px;
-    bottom:22px;
-
-    z-index:9997;
-
-    width:45px;
-    height:45px;
-
-    display:grid;
-    place-items:center;
-
-    border:1px solid var(--border);
-    border-radius:14px;
-
-    background:#fff;
-    color:var(--green);
-
-    box-shadow:0 8px 25px rgba(5,53,39,.12);
-
+.reveal{
     opacity:0;
-    visibility:hidden;
-    transform:translateY(15px);
-
-    transition:.25s;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
 }
 
-.back-top.show{
+.reveal.show{
     opacity:1;
-    visibility:visible;
     transform:translateY(0);
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:950px){
-
-    .nav{
-        min-height:70px;
-    }
 
     .menu-toggle{
         display:flex;
@@ -1284,32 +1213,22 @@ footer a:hover{
 
     .nav-links{
         position:fixed;
-
         top:70px;
-        right:12px;
-        left:12px;
-
+        right:0;
+        left:0;
         z-index:9995;
-
         display:flex;
         flex-direction:column;
         align-items:stretch;
-        gap:4px;
-
-        padding:12px;
-
-        border:1px solid var(--border);
-        border-radius:18px;
-
+        gap:3px;
+        padding:14px;
         background:rgba(255,255,255,.98);
-
-        box-shadow:0 25px 55px rgba(5,53,39,.18);
-
-        transform:translateY(-20px);
+        border-bottom:1px solid var(--border);
+        box-shadow:0 25px 45px rgba(3,35,26,.14);
+        transform:translateY(-130%);
         opacity:0;
         visibility:hidden;
-
-        transition:.28s;
+        transition:.3s;
     }
 
     .nav-links.active{
@@ -1319,15 +1238,11 @@ footer a:hover{
     }
 
     .nav-links a{
+        min-height:48px;
         display:flex!important;
         align-items:center;
-
-        min-height:47px;
-
         padding:7px 13px;
-
         border-radius:11px;
-
         font-size:14px;
     }
 
@@ -1349,16 +1264,21 @@ footer a:hover{
     }
 
     .hero{
-        padding:60px 0;
+        min-height:auto;
+        padding:65px 0;
     }
 
     .hero-grid{
         grid-template-columns:1fr;
-        gap:35px;
+        gap:40px;
     }
 
     .hero h1{
-        font-size:42px;
+        font-size:43px;
+    }
+
+    .hero-card{
+        transform:none;
     }
 
     .services{
@@ -1373,12 +1293,15 @@ footer a:hover{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .about-grid,
-    .contact-grid{
+    .about-grid{
         grid-template-columns:1fr;
     }
 
     .steps{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
         grid-template-columns:1fr;
     }
 
@@ -1397,10 +1320,6 @@ footer a:hover{
         font-size:17px;
     }
 
-    .logo-text small{
-        font-size:8px;
-    }
-
     .logo-mark{
         width:43px;
         height:43px;
@@ -1412,11 +1331,11 @@ footer a:hover{
     }
 
     .hero{
-        padding:48px 0;
+        padding:50px 0;
     }
 
     .hero h1{
-        font-size:33px;
+        font-size:34px;
         letter-spacing:0;
     }
 
@@ -1436,21 +1355,32 @@ footer a:hover{
         min-height:350px;
     }
 
+    .hero-inner{
+        min-height:300px;
+    }
+
     .services{
         grid-template-columns:1fr;
     }
 
-    .popular-grid,
+    .popular-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
     .trust-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .section-title h2{
-        font-size:28px;
+    section{
+        padding:60px 0;
     }
 
-    section{
-        padding:58px 0;
+    .section-title{
+        margin-bottom:32px;
+    }
+
+    .section-title h2{
+        font-size:28px;
     }
 
     .service{
@@ -1458,7 +1388,7 @@ footer a:hover{
     }
 
     .cta-box{
-        padding:35px 24px;
+        padding:36px 24px;
     }
 
     .cta-box h2{
@@ -1468,36 +1398,31 @@ footer a:hover{
     .floating-whatsapp{
         left:15px;
         bottom:15px;
-        width:56px;
-        height:56px;
-    }
-
-    .back-top{
-        right:15px;
-        bottom:15px;
+        width:57px;
+        height:57px;
     }
 
     .ad-space{
-        min-height:170px;
+        min-height:175px;
+    }
+
+    .floating-shape{
+        display:none;
     }
 }
 
 @media(prefers-reduced-motion:reduce){
-
-    html{
-        scroll-behavior:auto;
-    }
-
     *,
     *::before,
     *::after{
-        transition:none!important;
+        scroll-behavior:auto!important;
         animation:none!important;
+        transition:none!important;
     }
 }
 
 :focus-visible{
-    outline:3px solid rgba(22,169,120,.4);
+    outline:3px solid rgba(24,185,130,.4);
     outline-offset:3px;
 }
 </style>
@@ -1506,205 +1431,211 @@ footer a:hover{
 <body>
 
 <header>
-<div class="container nav">
+    <div class="container nav">
 
-<a href="#home" class="logo" aria-label="مكتب الإتقان">
-    <div class="logo-mark">إ</div>
-    <div class="logo-text">
-        مكتب الإتقان
-        <small>لخدمات التعقيب والخدمات الإلكترونية</small>
+        <a href="#home" class="logo" aria-label="مكتب الإتقان">
+            <div class="logo-mark">إ</div>
+            <div class="logo-text">
+                مكتب الإتقان
+                <small>لخدمات التعقيب والخدمات الإلكترونية</small>
+            </div>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="فتح القائمة"
+            aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#home">الرئيسية</a>
+            <a href="#services">الخدمات</a>
+            <a href="#about">من نحن</a>
+            <a href="#how">طريقة العمل</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#advertising">الإعلانات</a>
+
+            <a
+                class="nav-whatsapp"
+                href="https://wa.me/966581458516"
+                target="_blank"
+                rel="noopener">
+                واتساب
+            </a>
+
+        </nav>
     </div>
-</a>
-
-<button
-    class="menu-toggle"
-    id="menuToggle"
-    type="button"
-    aria-label="فتح القائمة"
-    aria-expanded="false"
-    aria-controls="navLinks">
-    ☰
-</button>
-
-<nav class="nav-links" id="navLinks">
-
-<a href="#home">الرئيسية</a>
-<a href="#services">الخدمات</a>
-<a href="#about">من نحن</a>
-<a href="#how">طريقة العمل</a>
-<a href="#faq">الأسئلة الشائعة</a>
-<a href="#advertising">الإعلانات</a>
-
-<a
-    class="nav-whatsapp"
-    href="https://wa.me/966581458516"
-    target="_blank"
-    rel="noopener noreferrer">
-    واتساب
-</a>
-
-</nav>
-
-</div>
 </header>
 
 <div class="menu-overlay" id="menuOverlay"></div>
 
 <main>
 
-<!-- HERO -->
-
 <section class="hero" id="home">
 
-<div class="container hero-grid">
+    <div class="floating-shape shape-one"></div>
+    <div class="floating-shape shape-two"></div>
 
-<div>
+    <div class="container hero-grid">
 
-<span class="badge">
-خدمات للأفراد والمنشآت في المملكة العربية السعودية
-</span>
+        <div class="reveal">
 
-<h1>
-أنجز خدماتك
-<br>
-<span>بسهولة ووضوح</span>
-</h1>
+            <span class="badge">
+                <i></i>
+                خدمات للأفراد والمنشآت في المملكة العربية السعودية
+            </span>
 
-<p class="hero-description">
-مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية.
-نساعد الأفراد والمنشآت في متابعة الإجراءات والخدمات الإلكترونية،
-مع توضيح المتطلبات والخطوات قبل البدء.
-</p>
+            <h1>
+                أنجز خدماتك
+                <br>
+                <span class="gradient-text">بسهولة واحترافية</span>
+            </h1>
 
-<div class="buttons">
+            <p class="hero-description">
+                مكتب الإتقان لخدمات التعقيب والخدمات الإلكترونية.
+                نساعد الأفراد والمنشآت في متابعة الإجراءات والخدمات
+                الإلكترونية، مع توضيح المتطلبات والخطوات قبل البدء.
+            </p>
 
-<a
-class="btn btn-primary"
-href="https://wa.me/966581458516?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20خدمة"
-target="_blank"
-rel="noopener noreferrer">
-📲 اطلب خدمتك الآن
-</a>
+            <div class="buttons">
 
-<a class="btn btn-secondary" href="#services">
-استعرض الخدمات
-</a>
+                <a
+                    class="btn btn-primary"
+                    href="https://wa.me/966581458516?text=السلام%20عليكم،%20أرغب%20بالاستفسار%20عن%20خدمة"
+                    target="_blank"
+                    rel="noopener">
+                    📲 اطلب خدمتك الآن
+                </a>
 
-</div>
+                <a class="btn btn-secondary" href="#services">
+                    استعرض الخدمات
+                </a>
 
-</div>
+            </div>
 
-<div class="hero-visual">
+        </div>
 
-<div class="hero-card">
+        <div class="hero-visual reveal">
 
-<div class="hero-inner">
+            <div class="hero-card">
 
-<div class="hero-emblem">إ</div>
+                <div class="hero-inner">
 
-<h2>مكتب الإتقان</h2>
+                    <div class="hero-emblem">إ</div>
 
-<div class="gold-line"></div>
+                    <h2>مكتب الإتقان</h2>
 
-<p>
-تعقيب وخدمات إلكترونية
-للأفراد والمنشآت
-</p>
+                    <div class="gold-line"></div>
 
-<div class="hero-pills">
-<span class="hero-pill">الشركات</span>
-<span class="hero-pill">الأفراد</span>
-<span class="hero-pill">العمالة</span>
-<span class="hero-pill">الضرائب</span>
-<span class="hero-pill">الإقامات</span>
-</div>
+                    <p>
+                        تعقيب وخدمات إلكترونية
+                        للأفراد والمنشآت
+                    </p>
 
-</div>
+                    <div class="hero-pills">
+                        <span class="hero-pill">الشركات</span>
+                        <span class="hero-pill">الأفراد</span>
+                        <span class="hero-pill">العمالة</span>
+                        <span class="hero-pill">الضرائب</span>
+                        <span class="hero-pill">الإقامات</span>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
+    </div>
 </section>
 
-
-<!-- SERVICES -->
 
 <section id="services">
 
 <div class="container">
 
-<div class="section-title">
-<div class="mini">خدماتنا</div>
-<h2>حلول وخدمات في مكان واحد</h2>
-<p>اضغط على أي خدمة فرعية لمعرفة شرح مختصر عنها قبل التواصل معنا.</p>
+<div class="section-title reveal">
+    <div class="mini">خدماتنا</div>
+    <h2>حلول وخدمات في مكان واحد</h2>
+    <p>اضغط على أي خدمة فرعية لمعرفة شرح مختصر عنها.</p>
 </div>
 
 <div class="services">
 
-
 <!-- 1 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">🏢</div>
 
 <h3>خدمات الشركات والمنشآت</h3>
 
 <p>
-مساعدة ومتابعة في عدد من الإجراءات والخدمات الإلكترونية المتعلقة بالمنشآت.
+مساعدة ومتابعة في الإجراءات والخدمات الإلكترونية المتعلقة بالمنشآت.
 </p>
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات المنشآت</summary>
 <p>
-مساعدة ومتابعة في الإجراءات الإلكترونية الخاصة بالمنشآت،
-مع توضيح المتطلبات والخطوات بحسب نوع المعاملة.
+مساعدة في الإجراءات الإلكترونية الخاصة بالمنشآت
+مع توضيح المتطلبات والخطوات قبل البدء.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات قوى</summary>
 <p>
-مساعدة في متابعة الخدمات والإجراءات المتاحة للمنشآت عبر منصة قوى
-بحسب نوع الطلب وأهلية المنشأة.
+مساعدة في متابعة الخدمات والإجراءات المتاحة للمنشآت
+عبر منصة قوى بحسب نوع الطلب وأهلية المنشأة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات مكتب العمل</summary>
 <p>
-متابعة بعض الإجراءات والخدمات المتعلقة بالمنشآت والعمالة
-وفق المتطلبات والأنظمة المعمول بها.
+متابعة بعض الإجراءات والخدمات المتعلقة بالمنشآت
+والعمالة وفق المتطلبات والأنظمة المعمول بها.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>القوائم المالية</summary>
 <p>
-مساعدة المنشآت في تجهيز ومتابعة إجراءات رفع القوائم المالية
-والمستندات المرتبطة بها وفق المتطلبات المحددة.
-<span class="detail-note">تختلف المتطلبات بحسب نوع المنشأة وحالتها.</span>
+مساعدة المنشآت في تجهيز ومتابعة إجراءات رفع القوائم
+المالية والمستندات المرتبطة بها وفق المتطلبات المحددة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>حماية الأجور</summary>
 <p>
-مساعدة المنشآت في إجراءات ملف حماية الأجور ومتابعة متطلبات
-الرفع والالتزام عبر المنصة المخصصة للخدمة.
+مساعدة المنشآت في إجراءات ملف حماية الأجور ومتابعة
+متطلبات الرفع والالتزام عبر المنصة المخصصة.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الشركات"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -1712,8 +1643,7 @@ target="_blank" rel="noopener noreferrer">
 
 
 <!-- 2 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">👤</div>
 
@@ -1725,51 +1655,63 @@ target="_blank" rel="noopener noreferrer">
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تجديد الإقامة</summary>
 <p>
 مساعدة ومتابعة إجراءات تجديد الإقامة حسب أهلية المستفيد
 وتوفر الشروط والمتطلبات اللازمة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>نقل الخدمات</summary>
 <p>
 متابعة إجراءات نقل خدمات العامل من منشأة إلى أخرى
 بحسب الأهلية والشروط والإجراءات المعتمدة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تغيير المهنة</summary>
 <p>
-مساعدة في متابعة طلب تغيير المهنة للعامل وفق المهنة المطلوبة
-وشروط وإجراءات الجهة المختصة.
+مساعدة في متابعة طلب تغيير المهنة للعامل وفق المهنة
+المطلوبة وشروط الجهة المختصة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات الجوازات</summary>
 <p>
-متابعة الخدمات والإجراءات الإلكترونية المرتبطة بالجوازات والإقامات
-بحسب نوع المعاملة.
+متابعة الخدمات والإجراءات الإلكترونية المرتبطة
+بالجوازات والإقامات بحسب نوع المعاملة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات الزيارة</summary>
 <p>
-مساعدة في متابعة الخدمات المتعلقة بتأشيرات وزيارات المستفيدين
-وفق نوع الزيارة والأهلية.
+مساعدة في متابعة الخدمات المتعلقة بتأشيرات وزيارات
+المستفيدين وفق نوع الزيارة والأهلية.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الأفراد"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -1777,8 +1719,7 @@ target="_blank" rel="noopener noreferrer">
 
 
 <!-- 3 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">📊</div>
 
@@ -1790,51 +1731,63 @@ target="_blank" rel="noopener noreferrer">
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الفواتير الضريبية</summary>
 <p>
-مساعدة في الإجراءات والمتطلبات المتعلقة بالفواتير الضريبية
-والإلكترونية للمنشآت الخاضعة للضريبة.
+مساعدة في الإجراءات والمتطلبات المتعلقة بالفواتير
+الضريبية والإلكترونية للمنشآت الخاضعة للضريبة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>ضريبة القيمة المضافة</summary>
 <p>
-مساعدة في الإجراءات والمتطلبات المتعلقة بضريبة القيمة المضافة
-للمنشآت بحسب الحالة والنشاط.
+مساعدة في الإجراءات والمتطلبات المتعلقة بضريبة القيمة
+المضافة للمنشآت بحسب الحالة والنشاط.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>متابعة الإجراءات الضريبية</summary>
 <p>
-متابعة الطلبات والإجراءات الإلكترونية المتعلقة بالخدمات الضريبية
-وتوضيح الخطوات المطلوبة قبل البدء.
+متابعة الطلبات والإجراءات الإلكترونية المتعلقة بالخدمات
+الضريبية وتوضيح الخطوات المطلوبة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تجهيز المستندات</summary>
 <p>
-المساعدة في ترتيب وتجهيز المستندات المطلوبة للخدمة قبل تقديم الطلب
-بحسب نوع المعاملة.
+المساعدة في ترتيب وتجهيز المستندات المطلوبة للخدمة
+قبل تقديم الطلب بحسب نوع المعاملة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الاستفسارات الضريبية</summary>
 <p>
-توضيح المتطلبات والإجراءات العامة المتعلقة بالخدمات الضريبية
-ومساعدة العميل في معرفة الخطوة المناسبة.
+توضيح المتطلبات والإجراءات العامة المتعلقة بالخدمات
+الضريبية ومساعدة العميل في معرفة الخطوة المناسبة.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20الخدمات%20الضريبية"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -1842,64 +1795,75 @@ target="_blank" rel="noopener noreferrer">
 
 
 <!-- 4 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">👷</div>
 
 <h3>خدمات العمالة</h3>
 
 <p>
-متابعة الخدمات والإجراءات المتعلقة بالعمالة وفق المتطلبات والأنظمة المعمول بها.
+متابعة الخدمات والإجراءات المتعلقة بالعمالة وفق المتطلبات والأنظمة.
 </p>
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>نقل الخدمات</summary>
 <p>
 متابعة إجراءات نقل خدمات العامل بين المنشآت وفق الأهلية
 والشروط والإجراءات المعتمدة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تغيير المهنة</summary>
 <p>
-مساعدة في متابعة طلب تغيير مهنة العامل بحسب المهنة المطلوبة
-والمتطلبات النظامية.
+مساعدة في متابعة طلب تغيير مهنة العامل بحسب المهنة
+المطلوبة والمتطلبات النظامية.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>رخص العمل</summary>
 <p>
 مساعدة في متابعة الإجراءات المتعلقة برخص العمل
 والمتطلبات المرتبطة بالعامل والمنشأة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>متابعة إجراءات العمالة</summary>
 <p>
 متابعة الطلبات والإجراءات الإلكترونية المتعلقة بالعمالة
 وتوضيح المتطلبات حسب نوع الخدمة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الخدمات الخاصة بالعمالة اليمنية</summary>
 <p>
 متابعة الخدمات المتعلقة بالعمالة اليمنية بحسب نوع الطلب
-والأهلية والضوابط المعمول بها وقت تقديم الخدمة.
+والأهلية والضوابط المعمول بها.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20العمالة"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -1907,8 +1871,7 @@ target="_blank" rel="noopener noreferrer">
 
 
 <!-- 5 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">🛂</div>
 
@@ -1920,50 +1883,63 @@ target="_blank" rel="noopener noreferrer">
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تجديد الإقامات</summary>
 <p>
-متابعة إجراءات تجديد الإقامة والتحقق من المتطلبات اللازمة قبل البدء.
+متابعة إجراءات تجديد الإقامة والتحقق من المتطلبات
+اللازمة قبل البدء.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>متابعة الخدمات</summary>
 <p>
-مساعدة في متابعة حالة بعض الطلبات والإجراءات الإلكترونية المرتبطة
-بالإقامات والجوازات.
+مساعدة في متابعة حالة بعض الطلبات والإجراءات الإلكترونية
+المرتبطة بالإقامات والجوازات.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>خدمات الزيارة</summary>
 <p>
-متابعة الخدمات المتعلقة بالزيارة بحسب نوع التأشيرة والأهلية
-والضوابط المعمول بها.
+متابعة الخدمات المتعلقة بالزيارة بحسب نوع التأشيرة
+والأهلية والضوابط المعمول بها.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تمديد الزيارة حسب الأهلية</summary>
 <p>
-المساعدة في متابعة طلب تمديد الزيارة إذا كان المستفيد مستوفيًا
-للشروط والأهلية المطلوبة.
+المساعدة في متابعة طلب تمديد الزيارة إذا كان المستفيد
+مستوفيًا للشروط والأهلية المطلوبة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الإجراءات الإلكترونية</summary>
 <p>
-مساعدة في تجهيز ومتابعة بعض الإجراءات الإلكترونية المتعلقة
-بالجوازات والإقامات.
+مساعدة في تجهيز ومتابعة بعض الإجراءات الإلكترونية
+المتعلقة بالجوازات والإقامات.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمات%20الجوازات%20والإقامات"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -1971,64 +1947,75 @@ target="_blank" rel="noopener noreferrer">
 
 
 <!-- 6 -->
-
-<div class="service">
+<div class="service reveal">
 
 <div class="service-icon">💻</div>
 
 <h3>الخدمات الإلكترونية والإدارية</h3>
 
 <p>
-مساعدة في تجهيز الطلبات والمستندات ومتابعة الإجراءات الإلكترونية حسب الخدمة.
+مساعدة في تجهيز الطلبات والمستندات ومتابعة الإجراءات الإلكترونية.
 </p>
 
 <ul class="service-list">
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>تجهيز المتطلبات</summary>
 <p>
-مساعدة العميل في معرفة المستندات والبيانات المطلوبة للخدمة
-وترتيبها قبل تقديم الطلب.
+مساعدة العميل في معرفة المستندات والبيانات المطلوبة
+للخدمة وترتيبها قبل تقديم الطلب.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>متابعة الطلبات</summary>
 <p>
 متابعة حالة الطلب والإجراءات المرتبطة به بحسب نوع الخدمة
 والقناة الإلكترونية المستخدمة.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الاستعلام عن الإجراءات</summary>
 <p>
 توضيح الخطوات والمتطلبات العامة المرتبطة بالخدمة
 ومساعدة العميل في معرفة الإجراء المناسب.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>الخدمات الإلكترونية</summary>
 <p>
 مساعدة في عدد من الخدمات الإلكترونية للأفراد والمنشآت
 بحسب نوع الطلب والمتطلبات.
 </p>
-</details></li>
+</details>
+</li>
 
-<li><details class="service-detail">
+<li>
+<details class="service-detail">
 <summary>المعاملات الإدارية</summary>
 <p>
-مساعدة في تجهيز ومتابعة بعض المعاملات والإجراءات الإدارية
-الإلكترونية حسب طبيعة الخدمة.
+مساعدة في تجهيز ومتابعة بعض المعاملات والإجراءات
+الإدارية الإلكترونية حسب طبيعة الخدمة.
 </p>
-</details></li>
+</details>
+</li>
 
 </ul>
 
-<a class="service-link"
+<a
+class="service-link"
 href="https://wa.me/966581458516?text=أرغب%20بالاستفسار%20عن%20خدمة%20إدارية"
-target="_blank" rel="noopener noreferrer">
+target="_blank"
+rel="noopener">
 اطلب الخدمة ←
 </a>
 
@@ -2039,70 +2026,91 @@ target="_blank" rel="noopener noreferrer">
 </section>
 
 
-<!-- POPULAR -->
-
 <section class="popular">
 
 <div class="container">
 
-<div class="section-title">
-<div class="mini">الأكثر طلبًا</div>
-<h2>خدمات يكثر الطلب عليها</h2>
-<p>اختر الخدمة وتواصل معنا لمعرفة المتطلبات والتكلفة قبل البدء.</p>
+<div class="section-title reveal">
+    <div class="mini">الأكثر طلبًا</div>
+    <h2>خدمات يكثر الطلب عليها</h2>
+    <p>اختر الخدمة وتواصل معنا لمعرفة المتطلبات والتكلفة قبل البدء.</p>
 </div>
 
 <div class="popular-grid">
 
-<a class="popular-item" href="#services"><span>🏢</span>خدمات الشركات</a>
-<a class="popular-item" href="#services"><span>🪪</span>تجديد الإقامة</a>
-<a class="popular-item" href="#services"><span>🔄</span>نقل الخدمات</a>
-<a class="popular-item" href="#services"><span>👷</span>تغيير المهنة</a>
-<a class="popular-item" href="#services"><span>📊</span>الخدمات الضريبية</a>
-<a class="popular-item" href="#services"><span>📄</span>القوائم المالية</a>
-<a class="popular-item" href="#services"><span>🛂</span>خدمات الزيارة</a>
-<a class="popular-item" href="#services"><span>💻</span>الخدمات الإلكترونية</a>
+<a class="popular-item reveal" href="#services">
+<span>🏢</span>خدمات الشركات
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>🪪</span>تجديد الإقامة
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>🔄</span>نقل الخدمات
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>👷</span>تغيير المهنة
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>📊</span>الخدمات الضريبية
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>📄</span>القوائم المالية
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>🛂</span>خدمات الزيارة
+</a>
+
+<a class="popular-item reveal" href="#services">
+<span>💻</span>الخدمات الإلكترونية
+</a>
 
 </div>
 </div>
 </section>
 
-
-<!-- TRUST -->
 
 <section class="trust">
 
 <div class="container">
 
-<div class="section-title">
-<div class="mini">لماذا الإتقان؟</div>
-<h2>خدمة واضحة من البداية</h2>
-<p>نسعى لتقديم تجربة سهلة وواضحة للعميل.</p>
+<div class="section-title reveal">
+    <div class="mini">لماذا الإتقان؟</div>
+    <h2>خدمة واضحة من البداية</h2>
+    <p style="color:#aec3ba">
+        نسعى لتقديم تجربة سهلة وواضحة للعميل.
+    </p>
 </div>
 
 <div class="trust-grid">
 
-<div class="trust-box">
+<div class="trust-box reveal">
 <div class="trust-number">01</div>
 <h3>تواصل مباشر</h3>
 <p>التواصل عبر واتساب بسهولة.</p>
 </div>
 
-<div class="trust-box">
+<div class="trust-box reveal">
 <div class="trust-number">02</div>
 <h3>وضوح</h3>
 <p>معرفة المتطلبات قبل البدء.</p>
 </div>
 
-<div class="trust-box">
+<div class="trust-box reveal">
 <div class="trust-number">03</div>
 <h3>متابعة</h3>
 <p>متابعة الإجراءات حسب الخدمة.</p>
 </div>
 
-<div class="trust-box">
+<div class="trust-box reveal">
 <div class="trust-number">04</div>
 <h3>تنوع الخدمات</h3>
-<p>خدمات متنوعة للأفراد والمنشآت.</p>
+<p>للأفراد والمنشآت.</p>
 </div>
 
 </div>
@@ -2110,20 +2118,18 @@ target="_blank" rel="noopener noreferrer">
 </section>
 
 
-<!-- ABOUT -->
-
 <section id="about" class="about">
 
 <div class="container about-grid">
 
-<div class="about-box">
+<div class="about-box reveal">
 
 <h2>عن مكتب الإتقان</h2>
 
 <p>
-مكتب الإتقان لخدمات التعقيب يقدم خدمات التعقيب والمساعدة
-في الإجراءات الإلكترونية للأفراد والمنشآت، مع الحرص على
-توضيح المتطلبات والخطوات قبل البدء.
+مكتب الإتقان لخدمات التعقيب يقدم خدمات التعقيب
+والمساعدة في الإجراءات الإلكترونية للأفراد والمنشآت،
+مع الحرص على توضيح المتطلبات والخطوات قبل البدء.
 </p>
 
 <div class="about-points">
@@ -2135,7 +2141,7 @@ target="_blank" rel="noopener noreferrer">
 
 </div>
 
-<div class="about-feature">
+<div class="about-feature reveal">
 
 <div class="about-feature-content">
 
@@ -2144,8 +2150,8 @@ target="_blank" rel="noopener noreferrer">
 <h2>خدمتنا تبدأ من فهم طلبك</h2>
 
 <p>
-أرسل لنا اسم الخدمة التي تحتاجها، وسنساعدك في معرفة
-المتطلبات والخطوات المناسبة قبل البدء.
+أرسل لنا اسم الخدمة التي تحتاجها،
+وسنساعدك في معرفة المتطلبات والخطوات المناسبة قبل البدء.
 </p>
 
 <a
@@ -2153,7 +2159,7 @@ class="btn"
 style="margin-top:20px;background:linear-gradient(135deg,#c9a24a,#e1c477);color:#082e23;"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 تواصل معنا
 </a>
 
@@ -2164,21 +2170,23 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- ADS -->
-
 <section class="ads-section" id="advertising">
 
 <div class="container">
 
-<div class="section-title">
-<div class="mini">الإعلانات والشراكات</div>
+<div class="section-title reveal">
+
+<div class="mini">الإعلانات</div>
+
 <h2>مساحة إعلانية مميزة</h2>
+
 <p>
 مساحة مخصصة للإعلانات والشراكات التجارية داخل موقع الإتقان.
 </p>
+
 </div>
 
-<div class="ad-space">
+<div class="ad-space reveal">
 
 <div class="ad-space-content">
 
@@ -2199,36 +2207,44 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- HOW -->
-
 <section id="how">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-title reveal">
+
 <div class="mini">طريقة العمل</div>
+
 <h2>كيف تعمل الخدمة؟</h2>
+
 <p>ثلاث خطوات بسيطة وواضحة.</p>
+
 </div>
 
 <div class="steps">
 
-<div class="step">
+<div class="step reveal">
 <div class="step-number">1</div>
 <h3>أرسل طلبك</h3>
-<p>تواصل معنا عبر واتساب واكتب اسم الخدمة التي تحتاجها.</p>
+<p>
+تواصل معنا عبر واتساب واكتب اسم الخدمة التي تحتاجها.
+</p>
 </div>
 
-<div class="step">
+<div class="step reveal">
 <div class="step-number">2</div>
 <h3>نعرف المتطلبات</h3>
-<p>نوضح لك المتطلبات والخطوات والتكلفة قبل البدء.</p>
+<p>
+نوضح لك المتطلبات والخطوات والتكلفة قبل البدء.
+</p>
 </div>
 
-<div class="step">
+<div class="step reveal">
 <div class="step-number">3</div>
 <h3>تبدأ المتابعة</h3>
-<p>تتم متابعة الإجراء وفق المتطلبات والأنظمة المعمول بها.</p>
+<p>
+تتم متابعة الإجراء وفق المتطلبات والأنظمة المعمول بها.
+</p>
 </div>
 
 </div>
@@ -2236,21 +2252,23 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- FAQ -->
-
 <section id="faq">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-title reveal">
+
 <div class="mini">الأسئلة الشائعة</div>
+
 <h2>هل لديك استفسار؟</h2>
+
 <p>إجابات سريعة على بعض الأسئلة.</p>
+
 </div>
 
 <div class="faq">
 
-<details class="faq-item">
+<details class="faq-item reveal">
 <summary>كيف أتواصل مع مكتب الإتقان؟</summary>
 <p>
 يمكنك التواصل مباشرة عبر زر واتساب الموجود في الموقع
@@ -2258,33 +2276,36 @@ rel="noopener noreferrer">
 </p>
 </details>
 
-<details class="faq-item">
+<details class="faq-item reveal">
 <summary>هل يمكن الاستفسار قبل طلب الخدمة؟</summary>
 <p>
-نعم، يمكنك الاستفسار عن المتطلبات والخطوات والتكلفة قبل البدء.
+نعم، يمكنك الاستفسار عن المتطلبات والخطوات والتكلفة
+قبل البدء.
 </p>
 </details>
 
-<details class="faq-item">
+<details class="faq-item reveal">
 <summary>هل الخدمات متاحة للأفراد والشركات؟</summary>
 <p>
-نعم، يقدم الموقع خدمات متعلقة بالأفراد والمنشآت حسب نوع الخدمة والمتطلبات.
+نعم، يقدم الموقع خدمات متعلقة بالأفراد والمنشآت
+حسب نوع الخدمة والمتطلبات.
 </p>
 </details>
 
-<details class="faq-item">
+<details class="faq-item reveal">
 <summary>هل يتم ضمان قبول جميع الطلبات؟</summary>
 <p>
-لا. قبول أي طلب يعتمد على الأهلية والمتطلبات والأنظمة والجهة المختصة.
-دور المكتب هو المساعدة في الإجراءات والمتابعة حسب الخدمة.
+لا. قبول أي طلب يعتمد على الأهلية والمتطلبات والأنظمة
+والجهة المختصة. دور المكتب هو المساعدة في الإجراءات
+والمتابعة حسب الخدمة.
 </p>
 </details>
 
-<details class="faq-item">
+<details class="faq-item reveal">
 <summary>هل أعرف التكلفة قبل البدء؟</summary>
 <p>
-يتم توضيح التكلفة والمتطلبات المتاحة بعد معرفة نوع الخدمة وحالة الطلب
-وقبل البدء في تنفيذ الخدمة.
+يتم توضيح التكلفة والمتطلبات المتاحة بعد معرفة نوع
+الخدمة وحالة الطلب وقبل البدء في تنفيذ الخدمة.
 </p>
 </details>
 
@@ -2293,13 +2314,11 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- CTA -->
-
 <section class="cta">
 
 <div class="container">
 
-<div class="cta-box">
+<div class="cta-box reveal">
 
 <div class="cta-content">
 
@@ -2313,7 +2332,7 @@ rel="noopener noreferrer">
 class="btn"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 📲 تواصل معنا عبر واتساب
 </a>
 
@@ -2323,21 +2342,23 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- CONTACT -->
-
 <section id="contact">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-title reveal">
+
 <div class="mini">تواصل معنا</div>
+
 <h2>نحن بانتظار استفسارك</h2>
+
 <p>اختر الطريقة المناسبة للتواصل معنا.</p>
+
 </div>
 
 <div class="contact-grid">
 
-<div class="contact-card">
+<div class="contact-card reveal">
 
 <h3>📱 واتساب</h3>
 
@@ -2349,13 +2370,13 @@ rel="noopener noreferrer">
 class="contact-button"
 href="https://wa.me/966581458516"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 فتح واتساب
 </a>
 
 </div>
 
-<div class="contact-card">
+<div class="contact-card reveal">
 
 <h3>🏢 مكتب الإتقان</h3>
 
@@ -2376,8 +2397,6 @@ rel="noopener noreferrer">
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
 <div class="container">
@@ -2387,7 +2406,8 @@ rel="noopener noreferrer">
 <div>
 <div class="footer-title">مكتب الإتقان</div>
 <p>
-لخدمات التعقيب والخدمات الإلكترونية للأفراد والمنشآت.
+لخدمات التعقيب والخدمات الإلكترونية
+للأفراد والمنشآت.
 </p>
 </div>
 
@@ -2402,7 +2422,7 @@ rel="noopener noreferrer">
 
 <div>
 <div class="footer-title">تواصل</div>
-<a href="https://wa.me/966581458516" target="_blank" rel="noopener noreferrer">واتساب</a>
+<a href="https://wa.me/966581458516" target="_blank" rel="noopener">واتساب</a>
 <a href="#contact">تواصل معنا</a>
 <a href="#advertising">الإعلانات</a>
 </div>
@@ -2418,61 +2438,40 @@ rel="noopener noreferrer">
 </footer>
 
 
-<!-- FLOATING WHATSAPP -->
-
 <a
 class="floating-whatsapp"
 href="https://wa.me/966581458516?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20خدمة"
 target="_blank"
-rel="noopener noreferrer"
+rel="noopener"
 aria-label="التواصل عبر واتساب">
 ☏
 </a>
 
 
-<!-- BACK TO TOP -->
-
-<button
-class="back-top"
-id="backTop"
-type="button"
-aria-label="العودة إلى الأعلى">
-↑
-</button>
-
-
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-
-    /* ===============================
-       MOBILE MENU
-    =============================== */
 
     const menuToggle=document.getElementById("menuToggle");
     const navLinks=document.getElementById("navLinks");
     const menuOverlay=document.getElementById("menuOverlay");
 
     function openMenu(){
-
         navLinks.classList.add("active");
         menuOverlay.classList.add("active");
         document.body.classList.add("menu-open");
 
         menuToggle.setAttribute("aria-expanded","true");
         menuToggle.setAttribute("aria-label","إغلاق القائمة");
-
         menuToggle.innerHTML="✕";
     }
 
     function closeMenu(){
-
         navLinks.classList.remove("active");
         menuOverlay.classList.remove("active");
         document.body.classList.remove("menu-open");
 
         menuToggle.setAttribute("aria-expanded","false");
         menuToggle.setAttribute("aria-label","فتح القائمة");
-
         menuToggle.innerHTML="☰";
     }
 
@@ -2489,34 +2488,23 @@ document.addEventListener("DOMContentLoaded",function(){
     menuOverlay.addEventListener("click",closeMenu);
 
     navLinks.querySelectorAll("a").forEach(function(link){
-
-        link.addEventListener("click",function(){
-            closeMenu();
-        });
-
+        link.addEventListener("click",closeMenu);
     });
 
     document.addEventListener("keydown",function(event){
-
         if(event.key==="Escape"){
             closeMenu();
         }
-
     });
 
     window.addEventListener("resize",function(){
-
         if(window.innerWidth>950){
             closeMenu();
         }
-
     });
 
 
-    /* ===============================
-       SERVICE ACCORDION
-       One service detail open per card
-    =============================== */
+    /* خدمة واحدة مفتوحة داخل كل بطاقة */
 
     document.querySelectorAll(".service").forEach(function(service){
 
@@ -2545,10 +2533,7 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
 
-    /* ===============================
-       FAQ
-       One question at a time
-    =============================== */
+    /* سؤال واحد مفتوح */
 
     const faqItems=document.querySelectorAll(".faq-item");
 
@@ -2573,10 +2558,7 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
 
-    /* ===============================
-       INTERNAL LINKS
-       Header-aware smooth scrolling
-    =============================== */
+    /* الروابط الداخلية */
 
     document.querySelectorAll('a[href^="#"]').forEach(function(link){
 
@@ -2597,7 +2579,6 @@ document.addEventListener("DOMContentLoaded",function(){
             event.preventDefault();
 
             const header=document.querySelector("header");
-
             const headerHeight=header ? header.offsetHeight : 0;
 
             const position=
@@ -2616,47 +2597,40 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 
 
-    /* ===============================
-       BACK TO TOP
-    =============================== */
+    /* ظهور العناصر عند النزول */
 
-    const backTop=document.getElementById("backTop");
+    const revealItems=document.querySelectorAll(".reveal");
 
-    function updateBackTop(){
+    if("IntersectionObserver" in window){
 
-        if(window.scrollY>500){
-            backTop.classList.add("show");
-        }else{
-            backTop.classList.remove("show");
-        }
+        const observer=new IntersectionObserver(function(entries){
 
-    }
+            entries.forEach(function(entry){
 
-    window.addEventListener("scroll",updateBackTop,{passive:true});
+                if(entry.isIntersecting){
 
-    backTop.addEventListener("click",function(){
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
+                }
+
+            });
+
+        },{
+            threshold:.12
         });
 
-    });
+        revealItems.forEach(function(item){
+            observer.observe(item);
+        });
 
-    updateBackTop();
+    }else{
 
+        revealItems.forEach(function(item){
+            item.classList.add("show");
+        });
 
-    /* ===============================
-       ESCAPE SAFETY
-    =============================== */
-
-    window.addEventListener("pageshow",function(){
-
-        if(window.innerWidth>950){
-            closeMenu();
-        }
-
-    });
+    }
 
 });
 </script>
